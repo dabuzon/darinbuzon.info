@@ -8,6 +8,4 @@ import '../index.html';
 
 /* --- MODULES --- */
 import './clock';
-//import './slideshow';
-//import './next-page';
 import './pageLoad';

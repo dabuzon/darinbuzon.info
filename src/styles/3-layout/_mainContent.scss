@@ -40,8 +40,8 @@
     .bold {
         padding: 60px 1700px 50px 100px;
 
-        @media (min-width: 1368px) and (max-width: 1900px), (max-width: 1367px) {
-            padding-right: 650px;
+        @media (min-width: 1201px) and (max-width: 1900px), (max-width: 1200px) {
+            padding-right: 900px;
         }
     }
 
@@ -51,8 +51,8 @@
         font-size: 1.25rem;
         font-weight: normal;
 
-        @media (min-width: 1368px) and (max-width: 1900px), (max-width: 1367px) {
-            padding-right: 650px;
+        @media (min-width: 1201px) and (max-width: 1900px), (max-width: 1200px) {
+            padding-right: 900px;
         }
     }
 
@@ -73,6 +73,10 @@
     .scroll {
         padding: 639px 0 0 270px;
         letter-spacing: 2px;
+
+        @media (min-width: 1201px) and (max-width: 1900px), (max-width: 1200px) {
+            padding: 263px 0 0 250px;
+        }
     }
 }
 
@@ -83,7 +87,7 @@
     img {
         height: 95%;
 
-        @media (min-width: 1368px) and (max-width: 1900px), (max-width: 1367px) {
+        @media (min-width: 1201px) and (max-width: 1900px), (max-width: 1200px) {
             height: 90%;
         }
     }
@@ -92,5 +96,9 @@
         letter-spacing: 2px;
         position: absolute;
         padding: 0 0 60px 270px;
+
+        @media (min-width: 1201px) and (max-width: 1900px), (max-width: 1200px) {
+            padding: 0 0 60px 250px;
+        }
     }
 }
