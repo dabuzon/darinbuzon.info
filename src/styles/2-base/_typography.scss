@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'Inter UI';
+    src: url("../assets/fonts/Inter-UI-Medium.woff2") format("woff2"),
+        url("../assets/fonts/Inter-UI-Medium.woff") format("woff");
+}
+
+@font-face {
+    font-family: 'Times';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../assets/fonts/times-roman-01-webfont.woff2') format('woff2'),
+        url('../assets/fonts/times-roman-01-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Times';
+    font-weight: normal;
+    font-style: italic;
+    src: url('../assets/fonts/times-italic-03-webfont.woff2') format('woff2'),
+        url('../assets/fonts/times-italic-03-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Times';
+    font-style: normal;
+    font-weight: bold;
+    src: url('../assets/fonts/times-bold-02-webfont.woff2') format('woff2'),
+        url('../assets/fonts/times-bold-02-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Times';
+    font-weight: bold;
+    font-style: italic;
+    src: url('../assets/fonts/times-bolditalic-04-webfont.woff2') format('woff2'),
+        url('../assets/fonts/times-bolditalic-04-webfont.woff') format('woff');
+}
