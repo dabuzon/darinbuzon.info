@@ -1,0 +1,9 @@
+{
+  "name": "darinbuzon.info",
+  "version": "1.0.0",
+  "description": "Landing page for Darin Buzon",
+  "main": "index.js",
+  "repository": "https://github.com/dabuzon/darinbuzon.info.git",
+  "author": "Darin Buzon",
+  "license": "MIT"
+}
