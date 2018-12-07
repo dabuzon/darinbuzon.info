@@ -17,3 +17,4 @@ Thumbs.db
 *.zip
 bin/
 *~.xml
+.DS_Store
