@@ -70,6 +70,13 @@ let loaders = {
             }]
         },
         {
+            test: require.resolve('feather-icons'),
+            use: [{
+                loader: 'expose-loader',
+                options: 'feather-icons'
+            }]
+        },
+        {
             test: /\.(png|jpg|gif)$/,
             use: [{
                     loader: 'file-loader',
