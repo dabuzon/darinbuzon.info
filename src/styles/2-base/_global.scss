@@ -2,15 +2,9 @@
 // INDEX
 // **************************
 html {
-    font-size: $font-size;
-    background-color: black;
-    color: white;
+    font-family: $font-text;
     height: 100%;
     margin: 0;
-
-    @media (min-width: 1368px) and (max-width: 1900px), (max-width: 1367px) {
-        font-size: $font-size-laptop;
-    }
 }
 
 body {
@@ -18,24 +12,10 @@ body {
     margin: 0;
 }
 
+p {
+    margin: 0;
+}
+
 a {
-    color: white;
-    text-decoration: none;
-}
-
-a:hover {
-    color: black;
-}
-
-// **************************
-// TYPOGRAPHY
-// **************************
-
-.bold {
-    font-family: $font-header;
-    font-size: 2.5rem;
-}
-
-.text {
-    font-family: $font-text;
+    font-family: $font-link;
 }

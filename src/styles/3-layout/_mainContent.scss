@@ -1,104 +1,11 @@
 // **************************
 // FIXED NAVIGATION
 // **************************
-.fixed {
+.nav {
     width: 100%;
     height: 100%;
     position: fixed;
-    top: 0;
-    left: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    * {
-        font-size: 1.35rem;
-    }
-
-    .contact {
-        padding: 60px 100px 0 100px;
-        text-align: right;
-    }
-
-    .below {
-        padding: 0 100px 60px 100px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-}
-
-// **************************
-// LANDING
-// **************************
-.landing {
-    position: relative;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-
-    .bold {
-        padding: 60px 1700px 50px 100px;
-
-        @media (min-width: 1201px) and (max-width: 1900px), (max-width: 1200px) {
-            padding-right: 900px;
-        }
-    }
-
-    .text {
-        padding: 0 1700px 0 100px;
-        line-height: 20pt;
-        font-size: 1.25rem;
-        font-weight: normal;
-
-        @media (min-width: 1201px) and (max-width: 1900px), (max-width: 1200px) {
-            padding-right: 900px;
-        }
-    }
-
-    .listings {
-        padding: 60px 0 0 100px;
-        display: flex;
-        flex-direction: column;
-
-        .about-flex-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(70px, max-content));
-            grid-gap: 20px;
-            margin: 10px 0;
-            line-height: 20pt;
-        }
-    }
-
-    .scroll {
-        padding: 639px 0 0 270px;
-        letter-spacing: 2px;
-
-        @media (min-width: 1201px) and (max-width: 1900px), (max-width: 1200px) {
-            padding: 263px 0 0 250px;
-        }
-    }
-}
-
-.portfolio {
-    height: 100%;
-    text-align: center;
-
-    img {
-        height: 95%;
-
-        @media (min-width: 1201px) and (max-width: 1900px), (max-width: 1200px) {
-            height: 90%;
-        }
-    }
-
-    div {
-        letter-spacing: 2px;
-        position: absolute;
-        padding: 0 0 60px 270px;
-
-        @media (min-width: 1201px) and (max-width: 1900px), (max-width: 1200px) {
-            padding: 0 0 60px 250px;
-        }
-    }
 }
