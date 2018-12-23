@@ -32,13 +32,19 @@ let loaders = {
         {
             test: /\.scss$/,
             use: ExtractTextPlugin.extract({
-              fallback: 'style-loader',
-              use: ['css-loader', 'sass-loader']
+                fallback: 'style-loader',
+                use: ['css-loader', 'sass-loader']
             })
         },
         {
             test: /\.m?js$/,
-            exclude: /(node_modules|bower_components)/,
+            include: [
+                path.resolve(__dirname, 'src')
+            ],
+            exclude: [
+                path.resolve(__dirname, 'node_modules'),
+                path.resolve(__dirname, 'bower_components')
+            ],
             use: {
                 loader: 'babel-loader',
                 options: {
