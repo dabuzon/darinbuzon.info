@@ -10,9 +10,19 @@
     .carousel {
         text-align: center;
 
-        .selected {
+        .show {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        img {
             width: 90%;
             height: auto;
+        }
+
+        .hide {
+            display: none;
         }
     }
 
