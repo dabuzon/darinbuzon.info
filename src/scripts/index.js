@@ -11,3 +11,4 @@ import '../index.html';
 import './clock';
 import './pageLoad';
 import './feather';
+import './switch';
