@@ -52,8 +52,8 @@
             .resume {
                 font-size: 14px;
                 flex: 1;
-                padding: 1.75vh 25px 0;
-                text-align: left;
+                padding: 0 25px;
+                text-align: center;
 
                 a {
                     font-size: 13.5px;
@@ -64,11 +64,13 @@
 
                     .title {
                         padding-bottom: 15px;
+                        text-decoration: underline;
                     }
                 }
 
                 .more {
-                    padding-top: 50px;
+                    padding-top: 20px;
+                    padding-bottom: 0;
                 }
             }
         }
