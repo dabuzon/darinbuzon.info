@@ -1,0 +1,21 @@
+body.info {
+    background-color: black;
+    color: white;
+    font-weight: lighter;
+
+    a {
+        color: white;
+    }
+
+    #click.active {
+        color: white;
+    }
+
+    img, .description, svg {
+        display: none;
+    }
+
+    .info {
+        color: white;
+    }
+}

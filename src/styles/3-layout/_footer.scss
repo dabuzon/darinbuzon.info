@@ -7,4 +7,12 @@
     .description .hide {
         display: none;
     }
+
+    .clock a {
+        text-decoration: none;
+    }
+
+    .clock a:hover {
+        text-decoration: underline;
+    }
 }

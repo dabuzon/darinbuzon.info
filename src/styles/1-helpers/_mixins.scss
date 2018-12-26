@@ -3,3 +3,9 @@
         @content;
     }
 }
+
+@mixin huge {
+    @media (min-device-width: 2560px) {
+        @content;
+    }
+}
