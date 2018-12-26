@@ -3,6 +3,7 @@ DECLARE require() FUNCTIONS FOR DEPENDENCIES/LIBRARIES
 */
 const path = require('path');
 const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -33,7 +34,7 @@ let loaders = {
             test: /\.scss$/,
             use: ExtractTextPlugin.extract({
                 fallback: 'style-loader',
-                use: ['css-loader', 'sass-loader']
+                use: ['css-loader', 'postcss-loader', 'sass-loader']
             })
         },
         {
@@ -140,6 +141,13 @@ let plugins = [
         title: 'Darin Buzon',
         template: './src/index.html',
         minify: true
+    }),
+    new webpack.LoaderOptionsPlugin({
+        options: {
+            postcss: [
+                autoprefixer()
+            ]
+        }
     }),
     new ExtractTextPlugin('style.css'),
     new FaviconsWebpackPlugin('./favicon.svg'),
