@@ -12,4 +12,5 @@ import './clock';
 import './pageLoad';
 import './feather';
 import './switch';
-import './info'
+import './info';
+//import './colophon';

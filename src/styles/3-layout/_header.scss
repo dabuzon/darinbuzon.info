@@ -4,17 +4,6 @@
     flex-direction: row;
     justify-content: space-between;
 
-    #click.active{
-        font-family: $font-link;
-        font-size: 15px;
-        color: blue;
-        text-decoration: underline;
-    }
-
-    #click.active:hover {
-        cursor: pointer;
-    }
-
     .info span.more-info {
         display: none;
     }

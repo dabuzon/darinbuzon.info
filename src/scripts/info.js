@@ -1,7 +1,9 @@
-$(document).ready(function() {
-    $('#click.active').click(function() {
+$(document).ready(function () {
+    $('.to-click').click(function () {
         $('body').toggleClass('info');
         $('.checker').toggleClass('more-info');
-        $('#click, #click.active').toggleClass('active');
+        $('.to-click').unwrap();
+        $('.clicking span').toggleClass('to-click no-click');
+        $('.to-click').wrap('<a href="javascript:void(0)"></a>');
     })
 })
