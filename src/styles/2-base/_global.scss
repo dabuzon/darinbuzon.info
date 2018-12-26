@@ -21,6 +21,10 @@ a {
     font-family: $font-link;
     font-size: 14.45px;
     color: blue;
+
+    @include phone {
+        font-size: 17px;
+    }
 }
 
 ul {

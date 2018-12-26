@@ -1,4 +1,5 @@
 let toggle = true;
+let mtoggle = true;
 
 function tick() {
     let time = dayjs(new Date());
@@ -15,5 +16,17 @@ setInterval(function blink() {
     toggle = !toggle;
 }, 1000);
 
-export {default} from './clock';
-export * from './clock';
+function mtick() {
+    let time = dayjs(new Date());
+    $("#mfirst-clock").html(time.format("MMMM D [—] H"));
+    $("#mminutes").html(time.format("mm"));
+}
+
+mtick();
+setInterval(mtick, 1000);
+setInterval(function blink() {
+    $("#mcolon").css({
+        visibility: mtoggle ? "visible" : "hidden"
+    });
+    mtoggle = !mtoggle;
+}, 1000);
