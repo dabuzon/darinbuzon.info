@@ -10,9 +10,13 @@
     .carousel {
         text-align: center;
 
-        .selected {
+        img {
             width: 90%;
             height: auto;
+        }
+
+        .hide {
+            display: none;
         }
     }
 
