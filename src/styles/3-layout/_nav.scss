@@ -28,10 +28,11 @@
         .header,
         .footer {
             padding: 20px;
-        }
-
-        .footer {
             font-size: 14px;
+
+            a {
+                font-size: 13px;
+            }
         }
 
         .content {
@@ -41,21 +42,21 @@
             flex: 1;
 
             .intro p:first-child {
-                padding: 2vh 25px 0;
+                padding: 2vh 37.5px 0;
+                font-size: 19px;
             }
 
             .intro p:nth-child(2) {
                 padding: 15px;
+                font-size: 18px;
             }
 
             .resume {
-                font-size: 15px;
-                flex: 1;
-                padding: 0 25px;
+                font-size: 13px;
                 text-align: center;
 
                 a {
-                    font-size: 14px;
+                    font-size: 12px;
                 }
 
                 div {
@@ -66,10 +67,14 @@
                         text-decoration: underline;
                     }
                 }
+            }
 
-                .more {
-                    padding-top: 20px;
-                    padding-bottom: 0;
+            .more {
+                font-size: 14px;
+                padding: 20px;
+
+                a {
+                    font-size: 13px;
                 }
             }
         }
