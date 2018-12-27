@@ -7,6 +7,10 @@ body.info {
         color: white;
     }
 
+    a:hover {
+        color: rgba(0,0,0,0);
+    }
+
     img, .description, svg {
         display: none;
     }
