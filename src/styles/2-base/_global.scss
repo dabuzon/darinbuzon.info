@@ -1,38 +1,8 @@
 // **************************
 // INDEX
 // **************************
-html {
+html, body {
     font-family: $font-text;
     height: 100%;
-    margin: 0;
-}
-
-body {
-    height: 100%;
-    margin: 0;
-    user-select: none;
-}
-
-p {
-    margin: 0;
-}
-
-a {
-    font-family: $font-link;
-    font-size: 14.45px;
-    color: blue;
-
-    @include phone {
-        font-size: 17px;
-    }
-}
-
-a:hover {
-    color: rgba(0,0,0,0);
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
     margin: 0;
 }

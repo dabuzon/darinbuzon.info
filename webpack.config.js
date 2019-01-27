@@ -1,13 +1,10 @@
-/*
-DECLARE require() FUNCTIONS FOR DEPENDENCIES/LIBRARIES
-*/
 const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+//const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 //const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
@@ -17,7 +14,7 @@ let entry = {
 
 let output = {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'build')
 }
 
 let loaders = {
@@ -68,13 +65,6 @@ let loaders = {
             use: [{
                 loader: 'expose-loader',
                 options: 'dayjs'
-            }]
-        },
-        {
-            test: require.resolve('feather-icons'),
-            use: [{
-                loader: 'expose-loader',
-                options: 'feather-icons'
             }]
         },
         {
@@ -150,14 +140,11 @@ let plugins = [
         }
     }),
     new ExtractTextPlugin('style.css'),
-    new FaviconsWebpackPlugin('./favicon.svg'),
-    new CleanWebpackPlugin(['dist'])
+    //new FaviconsWebpackPlugin('./favicon.svg'),
+    new CleanWebpackPlugin(['build'])
     //new BundleAnalyzerPlugin()
 ]
 
-/*
-LIST THE ABOVE MODULES SO WEBPACK CAN BEGIN BUNDLING 
-*/
 module.exports = {
     entry: entry,
     output: output,
