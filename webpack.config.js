@@ -10,7 +10,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 //const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-//const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 let entry = {
     'build': './src/scripts/index.js',
@@ -154,8 +154,10 @@ let plugins = [
         }
     }),
     //new FaviconsWebpackPlugin('./favicon.svg'),
-    new CleanWebpackPlugin(['build'])
-    //new BundleAnalyzerPlugin()
+    new CleanWebpackPlugin(['build']),
+    new BundleAnalyzerPlugin({
+        openAnalyzer: false
+    })
 ]
 
 module.exports = {
