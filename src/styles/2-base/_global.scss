@@ -22,7 +22,7 @@ main {
     padding: 15px 30px;
     display: grid;
     grid-template-columns: repeat(16, minmax(max-content, 1fr));
-    grid-template-rows: repeat(auto-fit, 1fr);
+    grid-template-rows: auto;
 
     /* GENERAL ELEMENTS */
     ul {

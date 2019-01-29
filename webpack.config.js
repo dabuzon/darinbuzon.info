@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const devMode = process.env.NODE_ENV !== 'production'
+const devMode = process.env.NODE_ENV !== 'production';
 const autoprefixer = require('autoprefixer');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -13,8 +13,8 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 //const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 let entry = {
-    index: './src/scripts/index.js',
-    about: './src/scripts/about.js'
+    'build': './src/scripts/index.js',
+    'build/about': './src/scripts/about.js'
 }
 
 let output = {
@@ -34,11 +34,12 @@ let loaders = {
         },
         {
             test: /\.(sa|sc|c)ss$/,
-            use: [
-                devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+            use: [{
+                    loader: MiniCssExtractPlugin.loader
+                },
                 'css-loader',
                 'postcss-loader',
-                'sass-loader',
+                'sass-loader'
             ],
         },
         {
@@ -129,18 +130,18 @@ let plugins = [
     new HtmlWebpackPlugin({
         template: './src/index.html',
         minify: true,
-        chunks: ['index'],
+        chunks: ['build'],
         filename: 'index.html'
     }),
     new HtmlWebpackPlugin({
         template: './src/about.html',
         minify: true,
-        chunks: ['about'],
+        chunks: ['build/about'],
         filename: 'about/index.html'
     }),
     new MiniCssExtractPlugin({
-        index: devMode ? '[name].css' : '[name].[hash].css',
-        about: devMode ? '[id].css' : '[id].[hash].css'
+        'build': devMode ? '[name].css' : '[name].[hash].css',
+        'build/about': devMode ? '[id].css' : '[id].[hash].css'
     }),
     new OptimizeCSSAssetsPlugin({
         canPrint: true
