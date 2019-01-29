@@ -3,8 +3,8 @@ import 'jquery';
 import 'dayjs';
 
 /* --- ASSETS --- */
-import '../styles/index.scss';
-import '../index.html';
+import '../styles/about.scss';
+import '../about.html';
 
 /* --- MODULES --- */
 import './modules/clock';

@@ -1,38 +1,45 @@
 const path = require('path');
 const webpack = require('webpack');
+const devMode = process.env.NODE_ENV !== 'production'
 const autoprefixer = require('autoprefixer');
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 //const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
 //const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 let entry = {
-    index: './src/scripts/index.js'
+    index: './src/scripts/index.js',
+    about: './src/scripts/about.js'
 }
 
 let output = {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'build')
 }
 
 let loaders = {
     rules: [{
             test: /\.(html)$/,
-            use: [{
+            use: {
                 loader: 'html-loader',
                 options: {
-                    minimize: true
+                    attrs: [':data-src']
                 }
-            }]
+            }
         },
         {
-            test: /\.scss$/,
-            use: ExtractTextPlugin.extract({
-                fallback: 'style-loader',
-                use: ['css-loader', 'postcss-loader', 'sass-loader']
-            })
+            test: /\.(sa|sc|c)ss$/,
+            use: [
+                devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+                'css-loader',
+                'postcss-loader',
+                'sass-loader',
+            ],
         },
         {
             test: /\.m?js$/,
@@ -96,18 +103,7 @@ let loaders = {
                     }
                 }
             ]
-        },
-        {
-            test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
-            use: [{
-                loader: 'file-loader',
-                options: {
-                    name: '[hash].[ext]',
-                    outputPath: 'assets/fonts/'
-                }
-            }]
         }
-
     ]
 
 }
@@ -119,7 +115,10 @@ let resolve = {
 }
 
 let optimization = {
-    minimizer: [new UglifyJsPlugin()]
+    minimizer: [new UglifyJsPlugin({
+        cache: true,
+        extractComments: true
+    })]
 }
 
 let plugins = [
@@ -128,9 +127,23 @@ let plugins = [
         jQuery: 'jquery'
     }),
     new HtmlWebpackPlugin({
-        title: 'Darin Buzon',
         template: './src/index.html',
-        minify: true
+        minify: true,
+        chunks: ['index'],
+        filename: 'index.html'
+    }),
+    new HtmlWebpackPlugin({
+        template: './src/about.html',
+        minify: true,
+        chunks: ['about'],
+        filename: 'about/index.html'
+    }),
+    new MiniCssExtractPlugin({
+        index: devMode ? '[name].css' : '[name].[hash].css',
+        about: devMode ? '[id].css' : '[id].[hash].css'
+    }),
+    new OptimizeCSSAssetsPlugin({
+        canPrint: true
     }),
     new webpack.LoaderOptionsPlugin({
         options: {
@@ -139,7 +152,6 @@ let plugins = [
             ]
         }
     }),
-    new ExtractTextPlugin('style.css'),
     //new FaviconsWebpackPlugin('./favicon.svg'),
     new CleanWebpackPlugin(['build'])
     //new BundleAnalyzerPlugin()

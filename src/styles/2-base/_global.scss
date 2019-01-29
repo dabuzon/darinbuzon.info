@@ -11,6 +11,10 @@ body {
     opacity: 0;
 }
 
+.hide {
+    display: none;
+}
+
 main {
     font-family: $font-text;
     height: 100%;
