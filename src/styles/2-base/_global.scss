@@ -1,38 +1,37 @@
-// **************************
-// INDEX
-// **************************
-html {
-    font-family: $font-text;
+html, body {
     height: 100%;
     margin: 0;
 }
 
 body {
+    transition: opacity 200ms ease-in-out;
+}
+
+.faded-out {
+    opacity: 0;
+}
+
+main {
+    font-family: $font-text;
     height: 100%;
-    margin: 0;
-    user-select: none;
-}
+    box-sizing: border-box;
+    padding: 15px 30px;
+    display: grid;
+    grid-template-columns: repeat(16, minmax(auto, 1fr));
+    grid-template-rows: auto;
 
-p {
-    margin: 0;
-}
-
-a {
-    font-family: $font-link;
-    font-size: 14.45px;
-    color: blue;
-
-    @include phone {
-        font-size: 17px;
+    /* GENERAL ELEMENTS */
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
     }
-}
 
-a:hover {
-    color: rgba(0,0,0,0);
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+    /* SPECIFIC ELEMENTS */
+    h1 {
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 0;
+    }
 }
