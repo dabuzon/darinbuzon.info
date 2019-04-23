@@ -1,7 +1,7 @@
 # darinbuzon.info
 This is the repository for my landing page. Includes resources, source code, and any other documentary items involving work I do or things I am interested in.
 ## Source code details
-Built using [React](https://github.com/facebook/react/) and [Day.js](https://github.com/iamkun/dayjs). Bundled using [Webpack](https://webpack.js.org/) and its CSS streamlined through [PostCSS](https://postcss.org/).
+Built using [React](https://github.com/facebook/react/) and [Day.js](https://github.com/iamkun/dayjs).
 ## Accessibility
 Accessible via the standard http protocol using [Now](https://zeit.co/now) as well through [Dat](https://datproject.org/).
 - https://www.darinbuzon.info
