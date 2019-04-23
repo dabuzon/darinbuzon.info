@@ -11,7 +11,8 @@ import {
   fontSize,
   fontWeight,
   lineHeight,
-  textAlign
+  textAlign,
+  gridGap
 } from "styled-system";
 
 export const Style = createGlobalStyle`
@@ -23,9 +24,30 @@ html, body {
   margin: 0;
   height: 100%;
 }
+body {
+  overflow-y: scroll;
+}
+html {
+  overflow: hidden;
+}
+}
 img {
-  grid-column: 2/-3;
+  grid-column: 2/4;
   width: 100%;
+}
+a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.75rem;
+  &:hover {
+    color: #fe5000;
+  }
+}
+br {
+  line-height: 1.5rem;
+}
+.me {
+  grid-column: 2/3;
 }
 #root {
   height: 100%;
@@ -43,6 +65,8 @@ export const Container = styled.div`
   ${justifyContent}
   ${gridTemplateColumns}
   ${gridColumn}
+  ${gridGap}
+  ${textAlign}
 `;
 
 export const Text = styled.div`
@@ -52,7 +76,7 @@ export const Text = styled.div`
   ${lineHeight}
   ${space}
   ${gridColumn}
-  ${textAlign} 
+  ${textAlign}
 `;
 
 export const StyledNavLink = styled(NavLink)`
