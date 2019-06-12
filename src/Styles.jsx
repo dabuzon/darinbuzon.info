@@ -15,10 +15,18 @@ import {
   gridGap
 } from "styled-system";
 
+import StandardBook from "./assets/font/StandardBook.otf";
+import StandardBookItalic from "./assets/font/StandardBookItalic.otf";
+
 export const Style = createGlobalStyle`
 * {
     box-sizing: border-box;
     margin: 0;
+
+    @font-face {
+    font-family: 'StandardBook';
+    src: url(${StandardBook});
+  }
 }
 html, body { 
   margin: 0;
