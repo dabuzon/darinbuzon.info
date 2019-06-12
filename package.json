@@ -1,6 +1,6 @@
 {
-  "name": "playgrounds",
-  "version": "0.1.0",
+  "name": "darinbuzon.info",
+  "version": "2.0.0",
   "private": true,
   "dependencies": {
     "react": "^16.8.6",
