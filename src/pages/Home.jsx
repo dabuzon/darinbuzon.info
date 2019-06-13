@@ -9,11 +9,11 @@ export class Home extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        {/* <Header /> */}
+        <Entry text="hello"/>
+        {/* <Entry />
         <Entry />
-        <Entry />
-        <Entry />
-        <Entry />
+        <Entry /> */}
       </Container>
     );
   }
