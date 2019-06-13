@@ -2,12 +2,19 @@ import React, { Component } from "react";
 
 import { Container } from "../Styles";
 
+import Header from "../components/Header";
+import Entry from "../components/Entry";
+
 export class Home extends Component {
   render() {
     return (
-      <Container height="100%">
-      
-        </Container>
+      <Container>
+        <Header />
+        <Entry />
+        <Entry />
+        <Entry />
+        <Entry />
+      </Container>
     );
   }
 }
