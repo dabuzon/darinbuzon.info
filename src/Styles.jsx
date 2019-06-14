@@ -15,17 +15,18 @@ import {
   gridGap
 } from "styled-system";
 
-import StandardBook from "./assets/font/StandardBook.otf";
-import StandardBookItalic from "./assets/font/StandardBookItalic.otf";
+import Book from "./assets/font/Book.otf";
+import Italic from "./assets/font/Italic.otf";
 
 export const Style = createGlobalStyle`
 * {
     box-sizing: border-box;
     margin: 0;
+    text-align: justify;
 
     @font-face {
-    font-family: 'StandardBook';
-    src: url(${StandardBook});
+    font-family: 'Book';
+    src: url(${Book});
   }
 }
 html, body { 
@@ -36,16 +37,37 @@ html, body {
 a {
   color: black;
   text-decoration: none;
-  font-size: 1.75rem;
   &:hover {
-    color: #fe5000;
+    cursor: pointer;
+    font-family: 'Italic';
   }
+}
+
+span {
+  text-decoration: underline;
+}
+
+.header {
+  @font-face {
+    font-family: 'Italic';
+    src: url(${Italic});
+  }
+
+  font-size: 36px;
 }
 
 #root {
   height: 100%;
-  font-family: Arial, sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family: 'Book', Arial, sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Helvetica, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+.header {
+  font-family: 'Italic';
+}
+
+.no {
+  font-family: 'Book';
+}
+
 }
 `;
 

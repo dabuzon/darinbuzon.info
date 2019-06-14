@@ -15,8 +15,8 @@ export class Entry extends Component {
 
 const Brief = (props) => {
   return (
-    <Container>
-      <Container>{props.name}</Container>
+    <Container pr="55px" pl="55px" pt="80px" pb="80px" display="grid" gridTemplateColumns="20% 30% 30%" gridGap="10%">
+      <Container className="header">{props.name}</Container>
       <Container>{props.info}</Container>
       <Container>{props.ppl}</Container>
     </Container>
