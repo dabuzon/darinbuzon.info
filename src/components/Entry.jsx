@@ -6,15 +6,21 @@ export class Entry extends Component {
   render() {
     return (
       <Container>
-        <Brief brief={this.props.text} />
+        <Brief name={this.props.name} info={this.props.info} ppl={this.props.ppl}/>
         {/* <Image /> */}
       </Container>
     );
   }
 }
 
-export const Brief = (props) => {
-  return <Container>{props.brief}</Container>;
+const Brief = (props) => {
+  return (
+    <Container>
+      <Container>{props.name}</Container>
+      <Container>{props.info}</Container>
+      <Container>{props.ppl}</Container>
+    </Container>
+  );
 };
 
 const Image = () => {};

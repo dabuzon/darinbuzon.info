@@ -10,10 +10,10 @@ export class Home extends Component {
     return (
       <Container>
         {/* <Header /> */}
-        <Entry text="hello"/>
-        {/* <Entry />
+        <Entry name="Guggenheim" info="this is the info" ppl="these are the ppl"/>
         <Entry />
-        <Entry /> */}
+        <Entry />
+        <Entry />
       </Container>
     );
   }
