@@ -43,6 +43,10 @@ a {
   }
 }
 
+img {
+  width: 100%;
+}
+
 span {
   text-decoration: underline;
 }
