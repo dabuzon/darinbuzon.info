@@ -20,10 +20,8 @@ export class Entry extends Component {
 const Brief = props => {
   return (
     <Container
-      pr="55px"
-      pl="55px"
-      pt="80px"
-      pb="80px"
+      px="55px"
+      py="80px"
       display="grid"
       gridTemplateColumns="20% 30% 30%"
       gridGap="10%"
@@ -36,7 +34,7 @@ const Brief = props => {
 };
 
 const Image = props => {
-  return <img src={props.image} />;
+  return <img src={props.image} alt=""/>;
 };
 
 export default Entry;

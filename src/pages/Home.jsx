@@ -40,7 +40,9 @@ export class Home extends Component {
           info={Texts.b[0]}
           ppl={Texts.b[1]}
         />
-        <Container></Container>
+        <Container px="55px" py="20px">
+          {Texts.footer}
+        </Container>
       </Container>
     );
   }
