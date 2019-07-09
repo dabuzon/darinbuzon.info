@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Home from "./pages/Home";
-import About from "./pages/About";
 import { Style } from "./Styles";
 
 class App extends Component {
@@ -13,7 +12,6 @@ class App extends Component {
         <Router>
           <Switch>
             <Route path="/" component={Home} exact />
-            <Route path="/about" component={About} />
           </Switch>
         </Router>
       </React.Fragment>

@@ -19,7 +19,6 @@ export const Style = createGlobalStyle`
 * {
     box-sizing: border-box;
     margin: 0;
-    text-align: justify;
 }
 html, body { 
   margin: 0;
@@ -29,8 +28,9 @@ html, body {
 a {
   color: black;
   text-decoration: none;
+  font-style: oblique;
   &:hover {
-    cursor: pointer;
+    color: #fe5000;
   }
 }
 
@@ -39,16 +39,12 @@ img {
 }
 
 span {
-  text-decoration: underline;
-}
-
-.header {
-  font-size: 36px;
+  font-style: oblique;
 }
 
 #root {
   height: 100%;
-  font-family: Times, serif;
+  font-family: 'Times New Roman', Times, serif;
 }
 `;
 
