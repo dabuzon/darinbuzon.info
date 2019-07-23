@@ -23,7 +23,7 @@ export const Guggenheim = (
 
 export const Mpoetry = (
   <div>
-    Generative poetry machine developed for the interactive capstone at{" "}
+    Generative poetry software developed for the interactive senior capstone at{" "}
     <a href="http://dma.ucla.edu/" className="special">
       UCLA Design | Media Arts
     </a>
@@ -59,14 +59,14 @@ export const Flux = (
     <a href="https://cargocollective.com/willemhenrilucas" className="special">
       Willem Henri Lucas
     </a>{" "}
-    and print on risograph with assistance from Israel Gutierrez.
+    and printed on risograph with assistance from Israel Gutierrez.
   </div>
 );
 
 export const Accepting = (
   <div>
-    Self-commissioned book project titled Accepting/Unaccepting: Object and
-    Power.
+    Self-commissioned book project titled <span>Accepting/Unaccepting: Object and
+    Power</span>.
     <br />
     <br />
     Supervised under faculty advisor{" "}
@@ -83,7 +83,7 @@ export const Accepting = (
 
 export const Inquiry = (
   <div>
-    Self-commissioned book project titled An Inquiry on Food Waste.
+    Self-commissioned book project titled <span>An Inquiry on Food Waste</span>.
     <br />
     <br />
     Supervised under faculty advisor{" "}

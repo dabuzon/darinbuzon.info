@@ -49,9 +49,13 @@ sup.home {
   font-size: 16px;
 }
 
+span {
+  color: #fe5000;
+}
+
 #root {
   height: 100%;
-  padding: 5px 10px;
+  padding: 0px 10px;
 
   font-family: Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: bold;
