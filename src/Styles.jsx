@@ -28,27 +28,42 @@ html, body {
 a {
   color: black;
   text-decoration: none;
-  font-style: oblique;
   &:hover {
     color: #fe5000;
   }
+}
+
+a.special {
+  text-decoration: underline;
 }
 
 img {
   width: 100%;
 }
 
-span {
-  font-style: oblique;
+sup {
+  font-size: 24px;
+}
+
+sup.home {
+  font-size: 16px;
 }
 
 #root {
   height: 100%;
-  font-family: 'Times New Roman', Times, serif;
+  padding: 5px 10px;
+
+  font-family: Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: bold;
+  font-size: 24px;
 }
 `;
 
 export const Container = styled.div`
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 20px;
+
   ${height}
   ${space}
   
@@ -59,6 +74,17 @@ export const Container = styled.div`
   ${gridColumn}
   ${gridGap}
   ${textAlign}
+`;
+
+// AGNOSTIC CONTAINER
+export const Agn = styled.div`
+  ${fontSize}
+  ${gridColumn}
+  ${textAlign}
+  ${display}
+  ${flexDirection}
+  ${justifyContent}
+  ${height}
 `;
 
 export const Text = styled.div`
