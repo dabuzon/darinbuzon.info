@@ -38,8 +38,10 @@ a.special {
 }
 
 img {
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   grid-column: 4/-1;
+  max-height: 1000px;
 }
 
 sup {

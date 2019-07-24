@@ -3,12 +3,19 @@ import React, { Component } from "react";
 import { Container, Agn, meta, StyledNavLink } from "../Styles";
 import {
   Guggenheim,
-  Mpoetry,
+  // Mpoetry,
   Flux,
   Accepting,
   Inquiry,
   Questions
 } from "../components/Text.jsx";
+import {
+  GuggImg,
+  FluxImg,
+  AcceptImg,
+  InquiryImg,
+  QuestionImg
+} from "../components/ImgSet";
 import { Entry } from "../components/Entry";
 
 export class Home extends Component {
@@ -40,12 +47,12 @@ export class Home extends Component {
           </Container>
         </Container>
         <Agn>
-          <Entry info={Guggenheim} />
-          <Entry info={Mpoetry} />
-          <Entry info={Flux} />
-          <Entry info={Accepting} />
-          <Entry info={Inquiry} />
-          <Entry info={Questions} />
+          <Entry sauce={GuggImg} info={Guggenheim} />
+          {/* <Entry sauce={Mpoetry} info={Mpoetry} /> */}
+          <Entry sauce={FluxImg} info={Flux} />
+          <Entry sauce={AcceptImg} info={Accepting} />
+          <Entry sauce={InquiryImg} info={Inquiry} />
+          <Entry sauce={QuestionImg} info={Questions} />
         </Agn>
         <Container pb="10px" display="flex" flexDirection="column">
           <hr />
