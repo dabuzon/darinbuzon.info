@@ -39,6 +39,7 @@ a.special {
 
 img {
   width: 100%;
+  grid-column: 4/-1;
 }
 
 sup {
