@@ -42,6 +42,9 @@ img {
   max-width: 100%;
   grid-column: 4/-1;
   max-height: 1000px;
+  &:hover {
+    cursor: e-resize;
+  }
 }
 
 sup {

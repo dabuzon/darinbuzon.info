@@ -51,20 +51,13 @@ export class About extends Component {
           </Agn>
         </Container>
         <Agn fontSize="48px">
-          <sup>
-            <a href="https://drive.google.com/file/d/1BN9HKWw5Oz12IhKayrgGgKetCxRTBYVl/view?usp=sharing">
-              1
-            </a>
-          </sup>
-          Résumé,{" "}
-          <sup>
-            <a href="https://github.com/dabuzon">2</a>
-          </sup>
-          GitHub,{" "}
-          <sup>
-            <a href="https://medium.com/@darin.buzon">3</a>
-          </sup>
-          Medium
+          <sup>1</sup>
+          <a href="https://drive.google.com/file/d/1BN9HKWw5Oz12IhKayrgGgKetCxRTBYVl/view?usp=sharing">
+            Résumé
+          </a>
+          , <sup>2</sup>
+          <a href="https://github.com/dabuzon">GitHub</a>, <sup>3</sup>
+          <a href="https://medium.com/@darin.buzon">Medium</a>
         </Agn>
       </Agn>
     );

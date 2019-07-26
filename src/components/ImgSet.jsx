@@ -3,6 +3,11 @@ const gimg1 = require("./img/01_guggenheim/GUGG_3.jpg");
 const gimg2 = require("./img/01_guggenheim/GUGG_4.jpg");
 const gimg3 = require("./img/01_guggenheim/GUGG_1.jpg");
 
+const mimg0 = require("./img/05_mpoetry/MPOETRY_1.jpg");
+const mimg1 = require("./img/05_mpoetry/MPOETRY_2.jpg");
+const mimg2 = require("./img/05_mpoetry/MPOETRY_3.jpg");
+const mimg3 = require("./img/05_mpoetry/MPOETRY_4.jpg");
+
 const uimg0 = require("./img/02_uclaflux/FLUX_1.jpeg");
 const uimg1 = require("./img/02_uclaflux/FLUX_2.jpeg");
 const uimg2 = require("./img/02_uclaflux/FLUX_3.jpeg");
@@ -35,3 +40,4 @@ export const FluxImg = [uimg0, uimg1, uimg2, uimg3, uimg4, uimg5];
 export const AcceptImg = [aimg0, aimg1, aimg2, aimg3, aimg4, aimg5];
 export const InquiryImg = [iimg0, iimg1, iimg2, iimg3, iimg4, iimg5, iimg6, iimg7, iimg8];
 export const QuestionImg = [qimg0, qimg1];
+export const MpImg = [mimg0, mimg1, mimg2, mimg3];

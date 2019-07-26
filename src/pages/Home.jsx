@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Container, Agn, meta, StyledNavLink } from "../Styles";
 import {
   Guggenheim,
-  // Mpoetry,
+  Mpoetry,
   Flux,
   Accepting,
   Inquiry,
@@ -11,6 +11,7 @@ import {
 } from "../components/Text.jsx";
 import {
   GuggImg,
+  MpImg,
   FluxImg,
   AcceptImg,
   InquiryImg,
@@ -48,7 +49,7 @@ export class Home extends Component {
         </Container>
         <Agn>
           <Entry sauce={GuggImg} info={Guggenheim} />
-          {/* <Entry sauce={Mpoetry} info={Mpoetry} /> */}
+          <Entry sauce={MpImg} info={Mpoetry} />
           <Entry sauce={FluxImg} info={Flux} />
           <Entry sauce={AcceptImg} info={Accepting} />
           <Entry sauce={InquiryImg} info={Inquiry} />
@@ -81,7 +82,7 @@ export class Home extends Component {
               <sup class="home">
                 <a href="https://github.com/dabuzon/darinbuzon.info">5</a>
               </sup>{" "}
-              readily available on GitHub. Last updated 19 July 2019.
+              readily available on GitHub. Last updated 26 July 2019.
             </Agn>
           </Container>
         </Container>

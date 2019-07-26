@@ -27,6 +27,8 @@ export class Entry extends Component {
     return (
       <Container py="150px">
         <Text gridColumn="1/3">{this.props.info}</Text>
+
+        
         <img src={this.props.sauce[this.state.index]} onClick={this.onClickF} alt="" />
       </Container>
     );
