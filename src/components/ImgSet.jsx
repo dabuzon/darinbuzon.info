@@ -8,12 +8,12 @@ const mimg1 = require("./img/05_mpoetry/MPOETRY_2.jpg");
 const mimg2 = require("./img/05_mpoetry/MPOETRY_3.jpg");
 const mimg3 = require("./img/05_mpoetry/MPOETRY_4.jpg");
 
-const uimg0 = require("./img/02_uclaflux/FLUX_1.jpeg");
-const uimg1 = require("./img/02_uclaflux/FLUX_2.jpeg");
-const uimg2 = require("./img/02_uclaflux/FLUX_3.jpeg");
-const uimg3 = require("./img/02_uclaflux/FLUX_4.jpeg");
-const uimg4 = require("./img/02_uclaflux/FLUX_5.jpeg");
-const uimg5 = require("./img/02_uclaflux/FLUX_6.jpeg");
+const uimg0 = require("./img/02_uclaflux/FLUX_1.jpg");
+const uimg1 = require("./img/02_uclaflux/FLUX_2.jpg");
+const uimg2 = require("./img/02_uclaflux/FLUX_3.jpg");
+const uimg3 = require("./img/02_uclaflux/FLUX_4.jpg");
+const uimg4 = require("./img/02_uclaflux/FLUX_5.jpg");
+const uimg5 = require("./img/02_uclaflux/FLUX_6.jpg");
 
 const aimg0 = require("./img/03_accepting/SOD_1.jpg");
 const aimg1 = require("./img/03_accepting/SOD_2.jpg");
@@ -22,15 +22,15 @@ const aimg3 = require("./img/03_accepting/SOD_4.jpg");
 const aimg4 = require("./img/03_accepting/SOD_5.jpg");
 const aimg5 = require("./img/03_accepting/SOD_6.jpg");
 
-const iimg0 = require("./img/04_inquiry/INQUIRY_1.jpeg");
-const iimg1 = require("./img/04_inquiry/INQUIRY_2.jpeg");
-const iimg2 = require("./img/04_inquiry/INQUIRY_3.jpeg");
-const iimg3 = require("./img/04_inquiry/INQUIRY_4.jpeg");
-const iimg4 = require("./img/04_inquiry/INQUIRY_5.jpeg");
-const iimg5 = require("./img/04_inquiry/INQUIRY_6.jpeg");
-const iimg6 = require("./img/04_inquiry/INQUIRY_7.jpeg");
-const iimg7 = require("./img/04_inquiry/INQUIRY_8.jpeg");
-const iimg8 = require("./img/04_inquiry/INQUIRY_9.jpeg");
+const iimg0 = require("./img/04_inquiry/INQUIRY_1.jpg");
+const iimg1 = require("./img/04_inquiry/INQUIRY_2.jpg");
+const iimg2 = require("./img/04_inquiry/INQUIRY_3.jpg");
+const iimg3 = require("./img/04_inquiry/INQUIRY_4.jpg");
+const iimg4 = require("./img/04_inquiry/INQUIRY_5.jpg");
+const iimg5 = require("./img/04_inquiry/INQUIRY_6.jpg");
+const iimg6 = require("./img/04_inquiry/INQUIRY_7.jpg");
+const iimg7 = require("./img/04_inquiry/INQUIRY_8.jpg");
+const iimg8 = require("./img/04_inquiry/INQUIRY_9.jpg");
 
 const qimg0 = require("./img/06_questions/QUESTIONS_1.jpg");
 const qimg1 = require("./img/06_questions/QUESTIONS_2.jpg");

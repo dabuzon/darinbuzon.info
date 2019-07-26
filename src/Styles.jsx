@@ -37,6 +37,10 @@ a.special {
   text-decoration: underline;
 }
 
+::selection {
+  background-color: #ffd6c3;
+}
+
 img {
   width: auto;
   max-width: 100%;
