@@ -27,7 +27,7 @@ export class About extends Component {
             <sup>
               <a href="https://medium.com/@darin.buzon">3</a>
             </sup>{" "}
-            in sunny Los Angeles. His practice finds itself primarily within
+            in Brookyln, New York. His practice finds itself primarily within
             public and cultural domains, centering around subjects of the
             contemporary in politics, power, technology, and culture.
             <br />
