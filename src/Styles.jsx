@@ -34,7 +34,12 @@ a {
 }
 
 a.special {
-  text-decoration: underline;
+  font-style: oblique;
+  &:hover {
+    color: black;
+    border-bottom: 15px dashed #fe5000;
+    font-style: normal;
+  }
 }
 
 ::selection {
@@ -60,16 +65,16 @@ sup.home {
 }
 
 span {
-  color: #fe5000;
+  border-bottom: 10px solid #E0E0E0;
 }
 
 #root {
   height: 100%;
   padding: 0px 10px;
 
-  font-family: Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-weight: bold;
+  font-family: Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 24px;
+  letter-spacing: 1.4px;
 }
 `;
 

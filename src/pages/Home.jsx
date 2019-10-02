@@ -62,11 +62,11 @@ export class Home extends Component {
               Colophon
             </Agn>
             <Agn gridColumn="4/-2" pt="5px">
-              This website is typeset in Helvetica
+              This website is typeset in Arial
               <sup class="home">
-                <a href="https://en.wikipedia.org/wiki/Helvetica">1</a>
-              </sup>{" "}
-              Bold, hosted through Now
+                <a href="https://en.wikipedia.org/wiki/Arial">1</a>
+              </sup>,{" "}
+               hosted through Now
               <sup class="home">
                 <a href="https://zeit.co/now">2</a>
               </sup>{" "}
@@ -82,7 +82,7 @@ export class Home extends Component {
               <sup class="home">
                 <a href="https://github.com/dabuzon/darinbuzon.info">5</a>
               </sup>{" "}
-              readily available on GitHub. Last updated 26 July 2019.
+              readily available on GitHub. Last updated 2 October 2019.
             </Agn>
           </Container>
         </Container>
