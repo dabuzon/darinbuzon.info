@@ -19,32 +19,32 @@ export class About extends Component {
                 1
               </a>
             </sup>{" "}
-            is a graphic artist, designing, programming
+            works with letters in Brooklyn, New York. Currently product
+            designing at{" "}
+            <a href="https://www.sanctuary.computer/" className="special">
+              Sanctuary Computer
+            </a>
+            , formerly design interning at{" "}
+            <a href="https://useallfive.com/" className="special">
+              Use All Five
+            </a>
+            .
+            <br />
+            <br />
+            His practice
             <sup>
-              <a href="https://github.com/dabuzon">2</a>
+              <a href="https://www.are.na/darin-buzon/">2</a>
+            </sup>{" "}
+            finds itself across disciplines of art, design, programming
+            <sup>
+              <a href="https://github.com/dabuzon">3</a>
             </sup>
             , and writing
             <sup>
-              <a href="https://medium.com/@darin.buzon">3</a>
-            </sup>{" "}
-            in Brookyln, New York. His practice finds itself primarily within
-            public and cultural domains, centering around subjects of the
-            contemporary in politics, power, technology, and culture.
-            <br />
-            <br />
-            Clients include the{" "}
-            <a href="https://www.guggenheim.org/" className="special">
-              Guggenheim Foundation
-            </a>
-            ,{" "}
-            <a href="https://schoolofmusic.ucla.edu/" className="special">
-              UCLA Herb Alpert School of Music
-            </a>
-            ,{" "}
-            <a href="https://www.arts.ucla.edu/" className="special">
-              UCLA School of Arts and Architecture
-            </a>
-            .{" "}
+              <a href="https://medium.com/@darin.buzon">4</a>
+            </sup>
+            , centering around subjects of the contemporary in politics, power,
+            technology, and culture.
           </Agn>
           <Agn gridColumn="-1/-2" textAlign="right">
             <StyledNavLink to="/">Return</StyledNavLink>
@@ -56,7 +56,8 @@ export class About extends Component {
             Résumé
           </a>
           , <sup>2</sup>
-          <a href="https://github.com/dabuzon">GitHub</a>, <sup>3</sup>
+          <a href="https://www.are.na/darin-buzon/">Are.na</a>, <sup>3</sup>
+          <a href="https://github.com/dabuzon">GitHub</a>, <sup>4</sup>
           <a href="https://medium.com/@darin.buzon">Medium</a>
         </Agn>
       </Agn>

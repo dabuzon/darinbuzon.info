@@ -82,7 +82,7 @@ export class Home extends Component {
               <sup class="home">
                 <a href="https://github.com/dabuzon/darinbuzon.info">5</a>
               </sup>{" "}
-              readily available on GitHub. Last updated 2 October 2019.
+              readily available on GitHub. Last updated 22 October 2019.
             </Agn>
           </Container>
         </Container>
