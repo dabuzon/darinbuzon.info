@@ -8,7 +8,8 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.2.0",
     "styled-components": "^4.2.0",
-    "styled-system": "^4.1.0"
+    "styled-system": "^4.1.0",
+    "typescript": "^3.8.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -18,15 +19,6 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "prettier": {
-    "singleQuote": true
-  },
-  "lint-staged": {
-    "**/!(public)/*.{ts,tsx,js,json,css,scss,md}": [
-      "prettier --write",
-      "git add"
-    ]
   },
   "browserslist": {
     "production": [
@@ -45,7 +37,6 @@
     "pnp": true
   },
   "devDependencies": {
-    "@sanity/cli": "^1.149.9",
-    "prettier": "^1.19"
+    "@sanity/cli": "^1.149.9"
   }
 }
