@@ -1,3 +1,12 @@
 {
-  "include": ["./node_modules/@sanity/base/types/**/*.ts", "./**/*.ts", "./**/*.tsx"]
+  "compilerOptions": {
+    "target": "ES5",
+    "watch": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "module": "esnext",
+    "jsx": "react",
+    "baseUrl": "src/"
+  },
+  "include": ["src"]
 }

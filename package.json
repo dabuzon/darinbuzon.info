@@ -1,49 +1,51 @@
 {
-  "name": "darinbuzoninfo",
-  "private": true,
+  "name": "darinbuzon.info",
   "version": "4.0.0",
-  "description": "dabuzon's home base for Cyberspace",
-  "main": "package.json",
-  "author": "Darin Buzon <hello@darinbuzon.info>",
-  "license": "MIT",
-  "keywords": [
-    "sanity"
-  ],
+  "private": true,
   "dependencies": {
-    "@sanity/base": "^1.149.10",
-    "@sanity/components": "^1.149.10",
-    "@sanity/core": "^1.149.12",
-    "@sanity/default-layout": "^1.149.10",
-    "@sanity/default-login": "^1.149.11",
-    "@sanity/desk-tool": "^1.149.10",
-    "@sanity/vision": "^1.149.0",
-    "prop-types": "^15.6",
-    "react": "^16.2",
-    "react-dom": "^16.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.2.0",
     "styled-components": "^4.2.0",
     "styled-system": "^4.1.0"
   },
   "scripts": {
-    "start": "sanity start",
-    "test": "sanity check"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
+  "prettier": {
+    "singleQuote": true
+  },
+  "lint-staged": {
+    "**/!(public)/*.{ts,tsx,js,json,css,scss,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not ie <= 11",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "installConfig": {
     "pnp": true
   },
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dabuzon/darinbuzon.info.git"
+  "devDependencies": {
+    "@sanity/cli": "^1.149.9",
+    "prettier": "^1.19"
   }
 }
