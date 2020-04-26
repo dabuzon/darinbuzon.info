@@ -1,15 +1,16 @@
-import createSchema from "part:@sanity/base/schema-creator";
-import schemaTypes from "all:part:@sanity/base/schema-type";
+// First, we must import the schema creator
+import createSchema from 'part:@sanity/base/schema-creator';
 
-import Post from "./Post";
-import RichText from "./RichText";
+// Then import schema types from any plugins that might expose them
+import schemaTypes from 'all:part:@sanity/base/schema-type';
 
-export const schema = {
-  name: "default",
+// Then we give our schema to the builder and provide the result to Sanity
+export default createSchema({
+  // We name our schema
+  name: 'default',
+  // Then proceed to concatenate our document type
+  // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
-    Post,
-    RichText
+    /* Your types here! */
   ]),
-};
-
-export default createSchema(schema);
+});

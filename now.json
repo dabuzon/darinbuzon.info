@@ -1,7 +1,12 @@
 {
     "version": 2,
+    "name": "darinbuzon-info",
+    // "alias": ["darinbuzon.info", "www.darinbuzon.info"],
     "routes": [
       { "handle": "filesystem" },
       { "src": "/.*", "dest": "/index.html" }
-    ]
+    ],
+    "github": {
+      "autoJobCancelation": true
+    }
   }

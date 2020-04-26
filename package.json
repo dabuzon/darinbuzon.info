@@ -1,24 +1,28 @@
 {
   "name": "darinbuzon.info",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "private": true,
-  "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.0",
-    "react-scripts": "3.2.0",
-    "styled-components": "^4.2.0",
-    "styled-system": "^4.1.0",
-    "typescript": "^3.8.3"
-  },
+  "dependencies": {},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "now"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "prettier": {
+    "singleQuote": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/!(public)/*.{ts,tsx,js,json,css,scss,md}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "browserslist": {
     "production": [
@@ -37,6 +41,8 @@
     "pnp": true
   },
   "devDependencies": {
-    "@sanity/cli": "^1.149.9"
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.7",
+    "prettier": "^2.0.5"
   }
 }
