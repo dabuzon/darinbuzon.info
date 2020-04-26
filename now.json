@@ -1,12 +1,27 @@
 {
-    "version": 2,
-    "name": "darinbuzon-info",
-    // "alias": ["darinbuzon.info", "www.darinbuzon.info"],
-    "routes": [
-      { "handle": "filesystem" },
-      { "src": "/.*", "dest": "/index.html" }
-    ],
-    "github": {
-      "autoJobCancelation": true
+  "version": 2,
+  "name": "darinbuzon-info",
+  "alias": ["darinbuzon.info", "www.darinbuzon.info"],
+
+  "builds": [
+    {
+      "src": "web/package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "public" }
+    },
+    {
+      "src": "studio/package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "dist" }
     }
-  }
+  ],
+
+  "routes": [
+    { "src": "^/studio/static/(.*)", "dest": "/studio/static/$1" },
+    { "src": "^/studio/(.*)", "dest": "/studio/index.html" },
+    {
+      "src": "/(.*)",
+      "dest": "/web/$1"
+    }
+  ]
+}
