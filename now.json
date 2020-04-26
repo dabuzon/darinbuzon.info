@@ -1,7 +1,6 @@
 {
   "version": 2,
   "name": "darinbuzon-info",
-  "alias": ["darinbuzon.info", "www.darinbuzon.info"],
 
   "builds": [
     {
