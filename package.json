@@ -40,7 +40,7 @@
     }
   },
   "lint-staged": {
-    "**/!(public)/*.{ts,tsx,js,json,css,scss,md}": [
+    "*.{ts,tsx,js,json,css,scss,md}": [
       "prettier --write"
     ]
   },

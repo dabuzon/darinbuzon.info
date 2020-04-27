@@ -1,26 +1,11 @@
 {
   "version": 2,
-  "name": "darinbuzon-info",
 
   "builds": [
     {
-      "src": "web/package.json",
+      "src": "package.json",
       "use": "@now/static-build",
       "config": { "distDir": "public" }
-    },
-    {
-      "src": "studio/package.json",
-      "use": "@now/static-build",
-      "config": { "distDir": "dist" }
-    }
-  ],
-
-  "routes": [
-    { "src": "^/studio/static/(.*)", "dest": "/studio/static/$1" },
-    { "src": "^/studio/(.*)", "dest": "/studio/index.html" },
-    {
-      "src": "/(.*)",
-      "dest": "/web/$1"
     }
   ]
 }
