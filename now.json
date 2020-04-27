@@ -1,9 +1,5 @@
 {
   "version": 2,
-  "env": {
-    "CONTENTFUL_SPACE_ID": "yzwpt0ue6tq4",
-    "CONTENTFUL_ACCESS_TOKEN": "8_0PtOR9AcWn6oS-8Jj66KsrMmYwlTtdQUtPPrV2H00"
-  },
   "builds": [
     {
       "src": "package.json",
