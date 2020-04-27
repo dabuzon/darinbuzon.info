@@ -1,14 +1,35 @@
 {
   "name": "darinbuzon.info",
-  "version": "4.1.0",
   "private": true,
-  "dependencies": {},
+  "version": "4.1.1",
+  "description": "dabuzon's home base for Cyberspace",
+  "main": "package.json",
+  "author": "Darin Buzon <hello@darinbuzon.info>",
+  "license": "MIT",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy": "now"
+    "build": "gatsby build",
+    "develop": "env-cmd -f .env.development gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "validate": "yarn lint && yarn test"
+  },
+  "dependencies": {
+    "@contentful/rich-text-react-renderer": "^13.4.0",
+    "gatsby": "^2.3.3",
+    "gatsby-plugin-react-helmet": "^3.2.5",
+    "gatsby-plugin-sass": "^2.0.11",
+    "gatsby-plugin-sharp": "^2.0.32",
+    "gatsby-remark-images": "^3.0.10",
+    "gatsby-remark-relative-images": "^0.2.2",
+    "gatsby-source-contentful": "^2.0.47",
+    "gatsby-source-filesystem": "^2.0.28",
+    "gatsby-transformer-remark": "^2.3.8",
+    "node-sass": "^4.11.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^6.0.0"
   },
   "prettier": {
     "singleQuote": true
@@ -37,8 +58,13 @@
     ]
   },
   "devDependencies": {
+    "env-cmd": "^10.1.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.1.7",
     "prettier": "^2.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dabuzon/darinbuzon.info.git"
   }
 }
