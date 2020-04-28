@@ -7,13 +7,12 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: 'Full-Stack Bootcamp',
-    author: 'Andrew Mead',
+    author: 'Darin Buzon',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-sass',
-    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-source-contentful',
       options: {
@@ -26,21 +25,6 @@ module.exports = {
       options: {
         name: 'src',
         path: `${__dirname}/src/`,
-      },
-    },
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [
-          'gatsby-remark-relative-images',
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 750,
-              linkImagesToOriginal: false,
-            },
-          },
-        ],
       },
     },
     {

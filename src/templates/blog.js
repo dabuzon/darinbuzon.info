@@ -19,6 +19,7 @@ export const query = graphql`
 
 const Blog = (props) => {
   const options = {
+    // From Gatsby Node API?
     renderNode: {
       'embedded-asset-block': (node) => {
         const alt = node.data.target.fields.title['en-US'];
@@ -28,6 +29,7 @@ const Blog = (props) => {
     },
   };
 
+  // I'm guessing the `data` variable refers to graphql query?
   return (
     <Layout>
       <Head title={props.data.contentfulBlogPost.title} />
