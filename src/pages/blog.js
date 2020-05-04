@@ -8,14 +8,18 @@ import Head from '../components/head';
 const BlogPage = () => {
   // `data` is what gets the data we need from GraphQL!
   // This is our query that fetches the data we want from Contentful
+
+  // DATA IS BEING QUERIED!!!
   const data = useStaticQuery(graphql`
     query {
-      allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
+      allContentfulPageIndex {
         edges {
           node {
-            title
-            slug
-            publishedDate(formatString: "MMMM Do, YYYY")
+            mainLabel
+            links
+            mainDescriptor {
+              mainDescriptor
+            }
           }
         }
       }
@@ -25,18 +29,17 @@ const BlogPage = () => {
   // Here is how we want our component rendered
   // We could use styles to just have this just a few components listed
   return (
+    // this is a modular component
     <Layout>
       <Head title="Blog" />
       <h1>Blog</h1>
       <ol className={blogStyles.posts}>
-        {data.allContentfulBlogPost.edges.map((edge) => {
+        {data.allContentfulPageIndex.edges.map((edge) => {
           return (
             <li className={blogStyles.post}>
               {/* This "Link to" creates the slug in the URL field */}
-              <Link to={`/blog/${edge.node.slug}`}>
-                <h2>{edge.node.title}</h2>
-                <p>{edge.node.publishedDate}</p>
-              </Link>
+              <h2>{edge.node.mainLabel}</h2>
+              <p>{edge.node.links}</p>
             </li>
           );
         })}
