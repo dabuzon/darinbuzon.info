@@ -1,19 +1,9 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
-import Layout from '../components/layout';
-import Head from '../components/head';
+import { Layout, SEO } from 'components';
 
 const IndexPage = () => {
-  return (
-    <Layout>
-      <Head title="Home" />
-      <h1>Hello.</h1>
-      <h2>
-        I'm Darin, a full-stack developer living in beautiful Philadelphia.
-      </h2>
-    </Layout>
-  );
+  return <Layout>{/* <SEO /> */}</Layout>;
 };
 
 export default IndexPage;

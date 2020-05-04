@@ -1,17 +1,36 @@
-const config = require('./src/data/config');
-
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
+const config = require('gatsby-plugin-config');
+
 module.exports = {
   siteMetadata: {
-    title: 'Full-Stack Bootcamp',
+    title: 'Darin Buzon',
     author: 'Darin Buzon',
+    description: 'Darin Buzon&#39;s homebase for cyberspace.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-module-resolver',
+      options: {
+        root: './src',
+        aliases: {
+          components: './components',
+          containers: './containers',
+          images: './images',
+          state: './state',
+          styles: './styles',
+          utils: './utils',
+          static: {
+            root: './public',
+            alias: './static',
+          },
+        },
+      },
+    },
     {
       resolve: 'gatsby-source-contentful',
       options: {

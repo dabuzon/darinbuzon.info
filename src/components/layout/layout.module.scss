@@ -1,0 +1,10 @@
+.container {
+  height: 100%;
+  padding: 16px 20px;
+
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-gap: 40px;
+
+  font-family: 'Times New Roman', Times, serif;
+}
