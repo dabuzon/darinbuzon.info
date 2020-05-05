@@ -8,6 +8,7 @@ const Style = createGlobalStyle`
 html, body { 
   margin: 0;
   height: 100%;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 a {
@@ -21,6 +22,12 @@ a {
 p {
   font-size: 24px;
   line-height: 29px;
+}
+
+h1 {
+  font-weight: normal;
+  font-size: 112px;
+  line-height: 123px;
 }
 `;
 

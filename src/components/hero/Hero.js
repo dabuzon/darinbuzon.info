@@ -20,23 +20,35 @@ const Hero = () => {
     }
   `);
 
+  const fetcher = data.allContentfulHero.nodes;
+
   return (
-    <div>
-      {data.allContentfulHero.nodes.map((edge) => {
+    <div className={styles.hero}>
+      {fetcher.map((edge) => {
         return (
           <ul>
-            <li>{edge.primaryLabel}</li>
-            <li>{edge.labels}</li>
+            <Link className={styles.pills}>{edge.primaryLabel}</Link>
+            {edge.labels.map((label) => {
+              return <Link className={styles.pills}>{label}</Link>;
+            })}
           </ul>
         );
       })}
 
-      {data.allContentfulHero.nodes.map((edge) => {
-        return <h1>{edge.impactText}</h1>;
+      {fetcher.map((edge) => {
+        return (
+          <div className={styles.grid}>
+            <h1>{edge.impactText}</h1>
+          </div>
+        );
       })}
 
-      {data.allContentfulHero.nodes.map((edge) => {
-        return <p>{documentToReactComponents(edge.supportingText.json)}</p>;
+      {fetcher.map((edge) => {
+        return (
+          <div className={styles.grid}>
+            <p>{documentToReactComponents(edge.supportingText.json)}</p>
+          </div>
+        );
       })}
     </div>
   );

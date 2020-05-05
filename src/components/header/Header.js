@@ -12,13 +12,14 @@ const Header = () => {
     }
   `);
 
+  // Possible to add a clock
   let pageCheck = data.contentfulPageHome.title;
   return (
     <header className={styles.header}>
-      <p>
+      <p className={styles.right}>
         <Link>{pageCheck}</Link>
       </p>
-      <p>
+      <p className={styles.right}>
         <Link>{(pageCheck = 'Home' ? 'Writing' : 'Home')}</Link>
       </p>
     </header>
