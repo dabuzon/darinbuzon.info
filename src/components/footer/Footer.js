@@ -6,8 +6,8 @@ import styles from './footer.module.scss';
 const Footer = () => {
   const data = useStaticQuery(graphql`
     query {
-      contentfulPageHome {
-        pageType
+      contentfulTemplateIndex {
+        contentType
         title
       }
     }
@@ -16,8 +16,8 @@ const Footer = () => {
   // Possible to add a clock
   let rightSide;
   let leftSide;
-  let pageCheck = data.contentfulPageHome.pageType;
-  let pageTitle = data.contentfulPageHome.title;
+  let pageCheck = data.contentfulTemplateIndex.pageType;
+  let pageTitle = data.contentfulTemplateIndex.title;
   if (pageCheck === 'Index' && pageTitle === 'Home') {
     leftSide = '';
     rightSide = 'Scroll to top';

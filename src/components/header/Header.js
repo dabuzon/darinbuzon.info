@@ -6,14 +6,14 @@ import styles from './header.module.scss';
 const Header = () => {
   const data = useStaticQuery(graphql`
     query {
-      contentfulPageHome {
+      contentfulTemplateIndex {
         title
       }
     }
   `);
 
   // Possible to add a clock
-  let pageCheck = data.contentfulPageHome.title;
+  let pageCheck = data.contentfulTemplateIndex.title;
   return (
     <header className={styles.header}>
       <p className={styles.right}>
