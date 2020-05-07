@@ -28,30 +28,26 @@ const Hero = (props) => {
   );
 
   return (
-    <div className={styles.hero}>
+    <div>
       {correctData.map((edge) => {
         return (
-          <ul>
-            <Link className={styles.pills}>{edge.primaryLabel}</Link>
-            {edge.labels.map((label) => {
-              return <Link className={styles.pills}>{label}</Link>;
-            })}
-          </ul>
-        );
-      })}
-
-      {correctData.map((edge) => {
-        return (
-          <div className={styles.grid}>
-            <h1>{edge.impactText}</h1>
-          </div>
-        );
-      })}
-
-      {correctData.map((edge) => {
-        return (
-          <div className={styles.grid}>
-            <p>{documentToReactComponents(edge.supportingText.json)}</p>
+          <div
+            className={
+              (props.location = 'Index' ? `{.hero .index}` : `{.hero}`)
+            }
+          >
+            <ul>
+              <Link className={styles.pills}>{edge.primaryLabel}</Link>
+              {edge.labels.map((label) => {
+                return <Link className={styles.pills}>{label}</Link>;
+              })}
+            </ul>
+            <div className={styles.grid}>
+              <h1>{edge.impactText}</h1>
+            </div>
+            <div className={styles.grid}>
+              <p>{documentToReactComponents(edge.supportingText.json)}</p>
+            </div>
           </div>
         );
       })}

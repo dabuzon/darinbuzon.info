@@ -4,9 +4,18 @@ import { useStaticQuery } from 'gatsby';
 import { Layout, SEO, Hero } from 'components';
 
 const IndexPage = () => {
-  // const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulTemplateIndex {
+        nodes {
+          heroes {
+            location
+          }
+        }
+      }
+    }
+  `);
 
-  // `)
   return (
     <Layout>
       <Hero location="Index" />
