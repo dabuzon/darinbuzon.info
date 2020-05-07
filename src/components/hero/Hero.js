@@ -4,11 +4,12 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 import styles from './hero.module.scss';
 
-const Hero = () => {
+const Hero = (props) => {
   const data = useStaticQuery(graphql`
     query {
       allContentfulHero {
         nodes {
+          location
           primaryLabel
           labels
           impactText
@@ -22,8 +23,37 @@ const Hero = () => {
 
   const fetcher = data.allContentfulHero.nodes;
 
+  /* 
+     HOW DO WE FUCKING
+     DEFINE FETCHER
+     TO DO FILTER?? 
+  */
+
+  // function filtering(input) {
+  //   input.location = props.location ? true : false;
+  // }
+
+  // const correctData = fetcher.location.filter(filtering);
+
+  // console.log(correctData);
+
   return (
     <div className={styles.hero}>
+      {/* {data.allContentfulHero.nodes.location
+        .filter((input) => {
+          input = props.location ? true : false;
+        })
+        .map((edge) => {
+          return (
+            <ul>
+              <Link className={styles.pills}>{edge.primaryLabel}</Link>
+              {edge.labels.map((label) => {
+                return <Link className={styles.pills}>{label}</Link>;
+              })}
+            </ul>
+          );
+        })} */}
+
       {fetcher.map((edge) => {
         return (
           <ul>

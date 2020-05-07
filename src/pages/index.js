@@ -9,7 +9,7 @@ const IndexPage = () => {
   // `)
   return (
     <Layout>
-      <Hero />
+      <Hero location="Index" />
     </Layout>
   );
 };
