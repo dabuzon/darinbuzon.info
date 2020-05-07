@@ -23,38 +23,13 @@ const Hero = (props) => {
 
   const fetcher = data.allContentfulHero.nodes;
 
-  /* 
-     HOW DO WE FUCKING
-     DEFINE FETCHER
-     TO DO FILTER?? 
-  */
-
-  // function filtering(input) {
-  //   input.location = props.location ? true : false;
-  // }
-
-  // const correctData = fetcher.location.filter(filtering);
-
-  // console.log(correctData);
+  const correctData = fetcher.filter((input) =>
+    input.location.includes(`${props.location}`)
+  );
 
   return (
     <div className={styles.hero}>
-      {/* {data.allContentfulHero.nodes.location
-        .filter((input) => {
-          input = props.location ? true : false;
-        })
-        .map((edge) => {
-          return (
-            <ul>
-              <Link className={styles.pills}>{edge.primaryLabel}</Link>
-              {edge.labels.map((label) => {
-                return <Link className={styles.pills}>{label}</Link>;
-              })}
-            </ul>
-          );
-        })} */}
-
-      {fetcher.map((edge) => {
+      {correctData.map((edge) => {
         return (
           <ul>
             <Link className={styles.pills}>{edge.primaryLabel}</Link>
@@ -65,7 +40,7 @@ const Hero = (props) => {
         );
       })}
 
-      {fetcher.map((edge) => {
+      {correctData.map((edge) => {
         return (
           <div className={styles.grid}>
             <h1>{edge.impactText}</h1>
@@ -73,7 +48,7 @@ const Hero = (props) => {
         );
       })}
 
-      {fetcher.map((edge) => {
+      {correctData.map((edge) => {
         return (
           <div className={styles.grid}>
             <p>{documentToReactComponents(edge.supportingText.json)}</p>
