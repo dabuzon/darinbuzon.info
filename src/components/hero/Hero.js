@@ -2,6 +2,8 @@ import React from 'react';
 import { useStaticQuery, Link } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
+import cx from 'classnames';
+
 import styles from './hero.module.scss';
 
 const Hero = (props) => {
@@ -22,7 +24,6 @@ const Hero = (props) => {
   `);
 
   const fetcher = data.allContentfulHero.nodes;
-
   const correctData = fetcher.filter((input) =>
     input.location.includes(`${props.location}`)
   );
@@ -32,9 +33,10 @@ const Hero = (props) => {
       {correctData.map((edge) => {
         return (
           <div
-            className={
-              (props.location = 'Index' ? `{.hero .index}` : `{.hero}`)
-            }
+            className={cx({
+              [styles.index]: (correctData.location = 'Index'),
+              [styles.hero]: correctData.location != 'Index',
+            })}
           >
             <ul>
               <Link className={styles.pills}>{edge.primaryLabel}</Link>

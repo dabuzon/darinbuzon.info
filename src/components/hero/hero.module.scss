@@ -1,4 +1,5 @@
-.hero {
+.hero,
+.index {
   display: flex;
   flex-direction: column;
 
@@ -38,6 +39,6 @@
   }
 }
 
-.hero.index {
+.index {
   border-bottom: 1px solid;
 }
