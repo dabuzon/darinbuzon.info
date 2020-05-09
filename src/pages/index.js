@@ -1,16 +1,29 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
+import { get as _get } from 'lodash';
 
 import { Layout, SEO, Hero } from 'components';
 
 export class IndexPage extends Component {
+  constructor(props) {
+    super();
+    this.state = {
+      data: _get(props, ['data']),
+      dataFetch: _get(props, ['data', 'contentfulTemplateIndex', 'heroes'], []),
+    };
+  }
+  componentDidUpdate(nextProps) {
+    if (this.props !== nextProps) {
+      this.setState({
+        data: nextProps.data,
+        dataFetch: nextProps.data.contentfulTemplateIndex.heroes,
+      });
+    }
+  }
   render() {
-    const { data } = this.props;
-
-    const dataFetch = data.contentfulTemplateIndex.heroes;
     return (
       <Layout>
-        {dataFetch.map((edge) => {
+        {this.state.dataFetch.map((edge) => {
           return (
             <Hero
               impactText={edge.impactText}
@@ -46,5 +59,4 @@ export const query = graphql`
     }
   }
 `;
-
 export default IndexPage;

@@ -32,7 +32,7 @@ const Hero = (props) => {
         <h1>{props.impactText}</h1>
       </div>
       <div className={styles.grid}>
-        <p>{props.info.info}</p>
+        <p>{props.info}</p>
       </div>
     </div>
   );
