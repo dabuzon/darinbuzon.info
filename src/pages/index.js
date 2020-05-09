@@ -1,32 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 
 import { Layout, SEO, Hero } from 'components';
 
-const IndexPage = ({ data }) => {
-  const dataFetch = data.contentfulTemplateIndex.heroes;
-  console.log(
-    dataFetch.map((edge) => {
-      return edge.info.info;
-    })
-  );
+export class IndexPage extends Component {
+  render() {
+    const { data } = this.props;
 
-  return (
-    <Layout>
-      {dataFetch.map((edge) => {
-        return (
-          <Hero
-            impactText={edge.impactText}
-            labels={edge.labels}
-            primaryLabel={edge.primaryLabel}
-            location={edge.location}
-            info={edge.info.info}
-          />
-        );
-      })}
-    </Layout>
-  );
-};
+    const dataFetch = data.contentfulTemplateIndex.heroes;
+    return (
+      <Layout>
+        {dataFetch.map((edge) => {
+          return (
+            <Hero
+              impactText={edge.impactText}
+              labels={edge.labels}
+              primaryLabel={edge.primaryLabel}
+              location={edge.location}
+              info={edge.info.info}
+            />
+          );
+        })}
+      </Layout>
+    );
+  }
+}
 
 export const query = graphql`
   query {
@@ -38,12 +36,12 @@ export const query = graphql`
           }
         }
         impactText
-        labels
-        location
-        primaryLabel
         info {
           info
         }
+        labels
+        location
+        primaryLabel
       }
     }
   }
