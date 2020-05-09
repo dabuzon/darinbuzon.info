@@ -6,12 +6,21 @@ import cx from 'classnames';
 import styles from './hero.module.scss';
 
 const Hero = (props) => {
+  const classCheck = {
+    index: () => {
+      props.location = 'Index' ? true : false;
+    },
+    hero: () => {
+      props.location = 'Index' ? true : false;
+    },
+  };
+
   return (
     <div
-    //   className={cx({
-    //     [styles.index]: (props.location = 'Index'),
-    //     [styles.hero]: props.location != 'Index',
-    //   })}
+      className={cx({
+        [styles.index]: classCheck.index,
+        [styles.hero]: classCheck.hero,
+      })}
     >
       <ul>
         <Link className={styles.pills}>{props.primaryLabel}</Link>
@@ -22,9 +31,9 @@ const Hero = (props) => {
       <div className={styles.grid}>
         <h1>{props.impactText}</h1>
       </div>
-      {/* <p className={styles.grid}>
-        {documentToReactComponents(props.supportingText.supportingText)}
-      </p> */}
+      <div className={styles.grid}>
+        <p>{props.info.info}</p>
+      </div>
     </div>
   );
 };
