@@ -31,6 +31,7 @@ export class IndexPage extends Component {
               primaryLabel={edge.primaryLabel}
               location={edge.location}
               info={edge.info.info}
+              image={edge.image.fluid}
             />
           );
         })}
@@ -44,8 +45,8 @@ export const query = graphql`
     contentfulTemplateIndex {
       heroes {
         image {
-          fluid {
-            src
+          fluid(maxWidth: 1000, quality: 100) {
+            ...GatsbyContentfulFluid
           }
         }
         impactText
@@ -59,4 +60,5 @@ export const query = graphql`
     }
   }
 `;
+
 export default IndexPage;
