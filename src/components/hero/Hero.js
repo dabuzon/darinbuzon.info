@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { get as _get } from 'lodash';
 import cx from 'classnames';
 
 import styles from './hero.module.scss';
 
 export class Hero extends Component {
   constructor(props) {
-    super(props);
+    super();
     this.state = {
       index: () => {
         props.location = 'Index' ? true : false;
@@ -16,13 +16,11 @@ export class Hero extends Component {
       hero: () => {
         props.location = 'Index' ? true : false;
       },
-      image: () => {
-        props.image = null ? true : false;
-      },
     };
   }
 
   render() {
+    // console.log(this.props.image.fluid)
     return (
       <div
         className={cx({
@@ -30,7 +28,7 @@ export class Hero extends Component {
           [styles.hero]: this.state.hero,
         })}
       >
-        {this.state.image ? <Img fluid={this.props.image.fluid} /> : null}
+        <Img fluid={this.props.image} />
         <ul>
           <Link className={styles.pills}>{this.props.primaryLabel}</Link>
           {this.props.labels.map((label) => {

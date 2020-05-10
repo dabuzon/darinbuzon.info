@@ -7,6 +7,10 @@ import { Layout, SEO, Hero } from 'components';
 export class IndexPage extends Component {
   constructor(props) {
     super();
+
+    // This is where we get the object `props`
+    // and _get what we need from below
+    // lodash allows for array path syntax apparently
     this.state = {
       data: _get(props, ['data']),
       dataFetch: _get(props, ['data', 'contentfulTemplateIndex', 'heroes'], []),
@@ -24,6 +28,8 @@ export class IndexPage extends Component {
     return (
       <Layout>
         {this.state.dataFetch.map((edge) => {
+          // console.log returns data!
+          console.log(edge.image.fluid);
           return (
             <Hero
               impactText={edge.impactText}
