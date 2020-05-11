@@ -27,7 +27,7 @@ p {
 h1 {
   font-weight: normal;
   font-size: 112px;
-  line-height: 123px;
+  line-height: 112px;
 }
 `;
 
