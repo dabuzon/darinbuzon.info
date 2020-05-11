@@ -15,6 +15,7 @@ export class IndexPage extends Component {
     this.state = {
       data: _get(props, ['data']),
       dataFetch: _get(props, ['data', 'contentfulTemplateIndex', 'heroes'], []),
+      isFirst: true,
     };
   }
   componentDidUpdate(nextProps) {
@@ -29,16 +30,31 @@ export class IndexPage extends Component {
     return (
       <Layout>
         {this.state.dataFetch.map((edge) => {
-          return (
-            <Hero
-              impactText={edge.impactText}
-              labels={edge.labels}
-              primaryLabel={edge.primaryLabel}
-              location={edge.location}
-              info={edge.info.info}
-              image={edge.image != null ? edge.image.fluid : false}
-            />
-          );
+          if (this.state.isFirst === true) {
+            this.state.isFirst = false;
+            return (
+              <Hero
+                impactText={edge.impactText}
+                labels={edge.labels}
+                primaryLabel={edge.primaryLabel}
+                location={edge.location}
+                info={edge.info.info}
+                image={edge.image != null ? edge.image.fluid : false}
+              />
+            );
+          } else {
+            return (
+              <Hero
+                impactText={edge.impactText}
+                labels={edge.labels}
+                primaryLabel={edge.primaryLabel}
+                location={edge.location}
+                info={edge.info.info}
+                image={edge.image != null ? edge.image.fluid : false}
+                isSecond={true}
+              />
+            );
+          }
         })}
       </Layout>
     );

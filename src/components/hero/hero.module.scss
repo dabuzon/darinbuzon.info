@@ -4,6 +4,16 @@
   flex-direction: column;
   margin: 0 0 30px 0;
 
+  .second {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-gap: 40px;
+
+    div {
+      grid-column: 2/-1;
+    }
+  }
+
   ul {
     padding: 0;
   }
@@ -35,7 +45,7 @@
     }
 
     p {
-      grid-column: 2/7;
+      grid-column: 2/10;
       padding-bottom: 120px;
     }
   }
