@@ -22,10 +22,12 @@ export class Hero extends Component {
   render() {
     let img;
     if (this.props.image) {
-      img = <Img fluid={this.props.image} />;
+      img = (
+        <div className={styles.image}>
+          <Img className={styles.actualImage} fluid={this.props.image} />
+        </div>
+      );
     }
-
-    console.log(this.props.image);
     return (
       <div
         className={cx({

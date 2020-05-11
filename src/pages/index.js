@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import { get as _get, isEmpty as _isEmpty } from 'lodash';
+import { get as _get } from 'lodash';
 
 import { Layout, SEO, Hero } from 'components';
 
@@ -50,8 +50,8 @@ export const query = graphql`
     contentfulTemplateIndex {
       heroes {
         image {
-          fluid(maxWidth: 1000, quality: 100) {
-            ...GatsbyContentfulFluid
+          fluid(quality: 100) {
+            ...GatsbyContentfulFluid_withWebp
           }
         }
         impactText
