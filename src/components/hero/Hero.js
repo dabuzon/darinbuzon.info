@@ -20,7 +20,12 @@ export class Hero extends Component {
   }
 
   render() {
-    // console.log(this.props.image.fluid)
+    let img;
+    if (this.props.image) {
+      img = <Img fluid={this.props.image} />;
+    }
+
+    console.log(this.props.image);
     return (
       <div
         className={cx({
@@ -28,7 +33,7 @@ export class Hero extends Component {
           [styles.hero]: this.state.hero,
         })}
       >
-        <Img fluid={this.props.image} />
+        {img}
         <ul>
           <Link className={styles.pills}>{this.props.primaryLabel}</Link>
           {this.props.labels.map((label) => {

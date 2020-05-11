@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
-import { get as _get } from 'lodash';
+import PropTypes from 'prop-types';
+import { get as _get, isEmpty as _isEmpty } from 'lodash';
 
 import { Layout, SEO, Hero } from 'components';
 
@@ -28,8 +29,6 @@ export class IndexPage extends Component {
     return (
       <Layout>
         {this.state.dataFetch.map((edge) => {
-          // console.log returns data!
-          console.log(edge.image.fluid);
           return (
             <Hero
               impactText={edge.impactText}
@@ -37,7 +36,7 @@ export class IndexPage extends Component {
               primaryLabel={edge.primaryLabel}
               location={edge.location}
               info={edge.info.info}
-              image={edge.image.fluid}
+              image={edge.image != null ? edge.image.fluid : false}
             />
           );
         })}
@@ -66,5 +65,9 @@ export const query = graphql`
     }
   }
 `;
+
+IndexPage.propTypes = {
+  image: PropTypes.object.isRequired,
+};
 
 export default IndexPage;
