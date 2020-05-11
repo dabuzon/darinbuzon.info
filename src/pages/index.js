@@ -13,13 +13,20 @@ export class IndexPage extends Component {
     // and _get what we need from below
     // lodash allows for array path syntax apparently
     this.state = {
-      data: _get(props, ['data']),
       dataFetch: _get(
         props,
         ['data', 'contentfulPageIndex', 'contentBlocks'],
         []
       ),
       aux: _get(props, ['data', 'contentfulPageIndex']),
+      pageType: _get(props, [
+        'data',
+        'contentfulPageIndex',
+        'sys',
+        'contentType',
+        'sys',
+        'contentful_id',
+      ]),
       isFirst: true,
     };
   }
@@ -32,11 +39,11 @@ export class IndexPage extends Component {
     }
   }
   render() {
-    console.log(this.state.data);
     return (
       <Layout
         title={this.state.aux.title}
         pathReturn={this.state.aux.pathReturn}
+        pageType={(this.state.pageType = 'pageIndex' ? true : false)}
       >
         {this.state.dataFetch.map((edge) => {
           if (this.state.isFirst === true) {
@@ -88,6 +95,13 @@ export const query = graphql`
         labels
         location
         primaryLabel
+      }
+      sys {
+        contentType {
+          sys {
+            contentful_id
+          }
+        }
       }
     }
   }
