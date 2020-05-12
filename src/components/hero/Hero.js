@@ -14,8 +14,9 @@ export class Hero extends Component {
         props.location = 'Index' ? true : false;
       },
       hero: () => {
-        props.location = 'Index' ? true : false;
+        props.location = 'Entry' ? true : false;
       },
+
       second: false,
     };
   }
@@ -30,7 +31,7 @@ export class Hero extends Component {
       );
       this.state.second = true;
     }
-    console.log(this.props.isSecond);
+    console.log(this.state.second);
     return (
       <div
         className={cx({
@@ -46,13 +47,17 @@ export class Hero extends Component {
         >
           <div>
             <ul>
-              <Link className={styles.pills}>{this.props.primaryLabel}</Link>
+              <div className={styles.pills}>{this.props.primaryLabel}</div>
               {this.props.labels.map((label) => {
                 return <Link className={styles.pills}>{label}</Link>;
               })}
             </ul>
             <div className={styles.grid}>
-              <h1>{this.props.impactText}</h1>
+              {this.state.second ? (
+                <Link className={styles.entry}>{this.props.impactText}</Link>
+              ) : (
+                <h1>{this.props.impactText}</h1>
+              )}
             </div>
             <div className={styles.grid}>
               <p>{this.props.info}</p>

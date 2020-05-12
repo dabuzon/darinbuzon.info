@@ -44,6 +44,7 @@ export class IndexPage extends Component {
         title={this.state.aux.title}
         pathReturn={this.state.aux.pathReturn}
         pageType={(this.state.pageType = 'pageIndex' ? true : false)}
+        homePage={true}
       >
         {this.state.dataFetch.map((edge) => {
           if (this.state.isFirst === true) {
