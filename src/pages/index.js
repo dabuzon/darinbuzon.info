@@ -27,7 +27,6 @@ export class IndexPage extends Component {
         'sys',
         'contentful_id',
       ]),
-      isFirst: true,
     };
   }
   componentDidUpdate(nextProps) {
@@ -46,9 +45,8 @@ export class IndexPage extends Component {
         pageType={(this.state.pageType = 'pageIndex' ? true : false)}
         homePage={true}
       >
-        {this.state.dataFetch.map((edge) => {
-          if (this.state.isFirst === true) {
-            this.state.isFirst = false;
+        {this.state.dataFetch.map((edge, index) => {
+          if (index === 0) {
             return (
               <Hero
                 impactText={edge.impactText}

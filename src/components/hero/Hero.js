@@ -16,8 +16,6 @@ export class Hero extends Component {
       hero: () => {
         props.location = 'Entry' ? true : false;
       },
-
-      second: false,
     };
   }
 
@@ -29,9 +27,8 @@ export class Hero extends Component {
           <Img className={styles.actualImage} fluid={this.props.image} />
         </div>
       );
-      this.state.second = true;
     }
-    console.log(this.state.second);
+    console.log(this.props.isSecond);
     return (
       <div
         className={cx({
@@ -42,7 +39,7 @@ export class Hero extends Component {
         {img}
         <div
           className={cx({
-            [styles.second]: this.state.second,
+            [styles.second]: this.props.isSecond,
           })}
         >
           <div>
