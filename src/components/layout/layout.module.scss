@@ -5,6 +5,11 @@
   display: flex;
   flex-direction: column;
 
+  a.footlink {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
   header {
     display: flex;
     justify-content: space-between;
@@ -13,7 +18,30 @@
     margin-bottom: 40px;
   }
 
-  .footObj {
+  .footDirect {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid;
+  }
+
+  .pills {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 1px solid;
+    border-radius: 100px;
+    margin: 0 4px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .pills:first-child {
+    margin: 0 4px 0 0;
+    background-color: black;
+    color: white;
+    margin: 0 0 20px 0;
+  }
+
+  .footTopContainer {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-gap: 40px;
@@ -34,33 +62,10 @@
       }
     }
   }
-
-  .pills {
-    display: inline-block;
-    padding: 8px 20px;
-    border: 1px solid;
-    border-radius: 100px;
-    margin: 0 4px;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-
-  .pills:first-child {
-    margin: 0 4px 0 0;
-    background-color: black;
-    color: white;
-    margin: 0 0 20px 0;
-  }
 }
 
 .lists {
   p {
     padding: 10px 0 10px 0;
   }
-}
-
-.footDirect {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 10px;
-  border-top: 1px solid;
 }

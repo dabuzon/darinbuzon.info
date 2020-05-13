@@ -8,10 +8,6 @@ import { Layout, SEO, Hero } from 'components';
 export class IndexPage extends Component {
   constructor(props) {
     super();
-
-    // This is where we get the object `props`
-    // and _get what we need from below
-    // lodash allows for array path syntax apparently
     this.state = {
       dataFetch: _get(
         props,

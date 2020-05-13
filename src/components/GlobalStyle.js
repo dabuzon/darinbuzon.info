@@ -14,6 +14,9 @@ html, body {
 a {
   color: black;
   text-decoration: none;
+  &:hover {
+    color: #fe5000;
+  }
 }
 
 p {

@@ -28,7 +28,6 @@ export class Hero extends Component {
         </div>
       );
     }
-    console.log(this.props.isSecond);
     return (
       <div
         className={cx({

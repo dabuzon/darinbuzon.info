@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useStaticQuery } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { get as __get } from 'lodash';
 
 import GlobalStyle from '../GlobalStyle';
 import styles from './layout.module.scss';
@@ -20,19 +21,11 @@ const Layout = (props) => {
     }
   `);
 
-  const foot = () => {
-    if (props.pageType) {
-      return <Link>Scroll to top</Link>;
-    } else {
-      return <Link>Next</Link>;
-    }
-  };
-
-  let pageTop;
+  let footTop;
   if (props.pageType) {
-    pageTop = data.footer.nodes.map((edge) => {
+    footTop = data.footer.nodes.map((edge) => {
       return (
-        <div className={styles.footContent}>
+        <div>
           <div className={styles.pills}>{edge.title}</div>
           <div className={styles.lists}>
             {documentToReactComponents(edge.copy.json)}
@@ -41,39 +34,30 @@ const Layout = (props) => {
       );
     });
   }
-  console.log(props.homePage);
-  let notHome = '';
+
   return (
+    // Footer and header need their links appropriately modified
     <React.Fragment>
       <GlobalStyle />
       <div className={styles.container}>
         <header>
-          <p>
-            <Link>{props.title}</Link>
-          </p>
-          <p>
-            <Link>{props.pathReturn}</Link>
-          </p>
+          <Link className={styles.footlink}>{props.title}</Link>
+          <Link className={styles.footlink}>{props.pathReturn}</Link>
         </header>
         {props.children}
-        {props.pageType ? (
-          <footer>
-            <div className={styles.footObj}>{pageTop}</div>
-            <div className={styles.footDirect}>
-              <p>
-                <Link>{props.homePage ? notHome : 'Return'}</Link>
-              </p>
-              <p>{foot()}</p>
-            </div>
-          </footer>
-        ) : (
-          <footer className={styles.footDirect}>
-            <p>
-              <Link>{props.homePage ? notHome : 'Return'}</Link>
-            </p>
-            <p>{foot}</p>
-          </footer>
-        )}
+        <footer>
+          <div className={styles.footTopContainer}>{footTop}</div>
+          <div className={styles.footDirect}>
+            <Link className={styles.footlink}>
+              {props.homePage ? '' : 'Return'}
+            </Link>
+            {props.pageType ? (
+              <Link className={styles.footlink}>Scroll to top</Link>
+            ) : (
+              <Link className={styles.footlink}>Next</Link>
+            )}
+          </div>
+        </footer>
       </div>
     </React.Fragment>
   );
