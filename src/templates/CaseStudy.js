@@ -1,11 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
-import { get as _get } from 'lodash';
 
-import { Layout, SEO, Hero } from 'components';
+import { Layout, SEO, Hero, Head } from 'components';
 
 const CaseStudy = (props) => {
-  return <Layout>{props.data.entry.title}</Layout>;
+  return (
+    <Layout>
+      <Head title={props.data.entry.title} />
+      {props.data.entry.title}
+    </Layout>
+  );
 };
 
 export const query = graphql`

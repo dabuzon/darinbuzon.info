@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { get as _get } from 'lodash';
 
-import { Layout, SEO, Hero } from 'components';
+import { Layout, SEO, Hero, Head } from 'components';
 
 export class IndexPage extends Component {
   constructor(props) {
@@ -41,6 +41,7 @@ export class IndexPage extends Component {
         pageType={(this.state.pageType = 'pageIndex' ? true : false)}
         homePage={true}
       >
+        <Head />
         {this.state.dataFetch.map((edge, index) => {
           if (index === 0) {
             return (

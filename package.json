@@ -24,7 +24,7 @@
     "gatsby-plugin-config": "^1.0.7",
     "gatsby-plugin-manifest": "^2.4.0",
     "gatsby-plugin-module-resolver": "^1.0.3",
-    "gatsby-plugin-react-helmet": "^3.2.5",
+    "gatsby-plugin-react-helmet": "^3.3.1",
     "gatsby-plugin-sass": "^2.0.11",
     "gatsby-plugin-sharp": "^2.0.32",
     "gatsby-plugin-styled-components": "^3.3.0",

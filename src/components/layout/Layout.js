@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, useStaticQuery } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { get as __get } from 'lodash';
 
 import GlobalStyle from '../GlobalStyle';
 import styles from './layout.module.scss';
