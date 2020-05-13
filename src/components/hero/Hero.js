@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
-import { get as _get } from 'lodash';
 import cx from 'classnames';
 
 import styles from './hero.module.scss';
@@ -23,9 +22,9 @@ export class Hero extends Component {
     let img;
     if (this.props.image) {
       img = (
-        <div className={styles.image}>
+        <Link className={styles.image}>
           <Img className={styles.actualImage} fluid={this.props.image} />
-        </div>
+        </Link>
       );
     }
     return (
