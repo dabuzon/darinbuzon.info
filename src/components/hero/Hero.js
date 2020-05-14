@@ -43,9 +43,11 @@ export class Hero extends Component {
           <div>
             <ul>
               <div className={styles.pills}>{this.props.primaryLabel}</div>
-              {this.props.labels.map((label) => {
-                return <Link className={styles.pills}>{label}</Link>;
-              })}
+              {this.props.labels
+                ? this.props.labels.map((label) => {
+                    return <Link className={styles.pills}>{label}</Link>;
+                  })
+                : false}
             </ul>
             <div className={styles.grid}>
               {this.state.second ? (
