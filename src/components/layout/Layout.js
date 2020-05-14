@@ -23,7 +23,7 @@ const Layout = (props) => {
   `);
 
   let footTop;
-  if (props.pageType) {
+  if (props.isIndex) {
     footTop = data.footer.nodes.map((edge) => {
       return (
         <div>
@@ -47,7 +47,11 @@ const Layout = (props) => {
         </header>
         {props.children}
         <footer>
-          <div className={styles.footTopContainer}>{footTop}</div>
+          {props.isIndex ? (
+            <div className={styles.footTopContainer}>{footTop}</div>
+          ) : (
+            false
+          )}
           <div className={styles.footDirect}>
             <Link className={styles.footlink}>
               {props.homePage ? '' : 'Return'}

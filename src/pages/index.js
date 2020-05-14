@@ -9,36 +9,16 @@ export class IndexPage extends Component {
   constructor(props) {
     super();
     this.state = {
-      dataFetch: _get(
-        props,
-        ['data', 'contentfulPageIndex', 'contentBlocks'],
-        []
-      ),
-      aux: _get(props, ['data', 'contentfulPageIndex']),
-      pageType: _get(props, [
-        'data',
-        'contentfulPageIndex',
-        'sys',
-        'contentType',
-        'sys',
-        'contentful_id',
-      ]),
+      dataFetch: _get(props, ['data', 'home', 'contentBlocks'], []),
+      aux: _get(props, ['data', 'home']),
     };
-  }
-  componentDidUpdate(nextProps) {
-    if (this.props !== nextProps) {
-      this.setState({
-        data: nextProps.data,
-        dataFetch: nextProps.data.contentfulPageIndex.contentBlocks,
-      });
-    }
   }
   render() {
     return (
       <Layout
         title={this.state.aux.title}
         pathReturn={this.state.aux.pathReturn}
-        pageType={(this.state.pageType = 'pageIndex' ? true : false)}
+        isIndex={true}
         homePage={true}
       >
         <Head />
@@ -64,7 +44,7 @@ export class IndexPage extends Component {
 
 export const query = graphql`
   query {
-    contentfulPageIndex {
+    home: contentfulPageIndex(title: { eq: "Home" }) {
       title
       pathReturn
       contentBlocks {
@@ -80,13 +60,6 @@ export const query = graphql`
         labels
         location
         primaryLabel
-      }
-      sys {
-        contentType {
-          sys {
-            contentful_id
-          }
-        }
       }
     }
   }

@@ -9,15 +9,19 @@ export class CaseStudy extends Component {
   constructor(props) {
     super();
     this.state = {
-      data: _get(props, ['data']),
+      aux: _get(props, ['data', 'entry']),
       dataFetch: _get(props, ['data', 'entry', 'contentBlocks']),
     };
   }
 
   render() {
     return (
-      <Layout>
-        <Head title={this.state.data.title} />
+      <Layout
+        title={this.state.aux.title}
+        pathReturn={this.state.aux.pathReturn}
+        isIndex={false}
+      >
+        <Head title={this.state.aux.title} />
         {this.state.dataFetch.map((edge, index) => {
           if (edge.__typename === 'ContentfulHero') {
             this.props = {
@@ -43,6 +47,7 @@ export const query = graphql`
   query($slug: String!) {
     entry: contentfulPageEntry(slug: { eq: $slug }) {
       title
+      pathReturn
       contentBlocks {
         ... on ContentfulSingleParagraph {
           body {
