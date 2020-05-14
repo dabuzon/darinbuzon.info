@@ -19,19 +19,20 @@ export class CaseStudy extends Component {
     return (
       <Layout>
         <Head title={this.state.data.title} />
-        {this.state.dataFetch.map((edge) => {
+        {this.state.dataFetch.map((edge, index) => {
           if (edge.__typename === 'ContentfulHero') {
+            if (index === 0) {
+              this.props = {
+                impactText: edge.impactText,
+                labels: edge.labels,
+                primaryLabel: edge.primaryLabel,
+                location: edge.location,
+              };
+            }
             console.log(edge.impactText);
             console.log(edge.primaryLabel);
-            console.log(edge.labels);
-            return (
-              <Hero
-                impactText={edge.impactText}
-                labels={edge.labels}
-                primaryLabel={edge.primaryLabel}
-                location={edge.location}
-              />
-            );
+            console.log(edge.location);
+            return <Hero {...this.props} />;
           } else if (edge.__typename === 'ContentfulImage') {
             console.log(edge.caption);
           }
