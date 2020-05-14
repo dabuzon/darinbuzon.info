@@ -8,10 +8,12 @@ import styles from './layout.module.scss';
 const Layout = (props) => {
   const data = useStaticQuery(graphql`
     query {
-      footer: allContentfulLabeledParagraph {
+      footer: allContentfulLabeledParagraph(
+        filter: { contentType: { eq: "Footer" } }
+        sort: { fields: title }
+      ) {
         nodes {
           title
-          contentType
           copy {
             json
           }

@@ -2,12 +2,24 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import { Layout, SEO, Hero, Head } from 'components';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 const CaseStudy = (props) => {
   return (
     <Layout>
       <Head title={props.data.entry.title} />
-      {props.data.entry.title}
+      {/* {props.data.entry.contentBlocks.map((edge) => {
+        if (edge.__typename === 'ContentfulHero') {
+          return (
+            <Hero
+              impactText={edge.impactText}
+              labels={edge.labels}
+              primaryLabel={edge.primaryLabel}
+              location={edge.location}
+            />
+          );
+        }
+      })} */}
     </Layout>
   );
 };
@@ -15,21 +27,30 @@ const CaseStudy = (props) => {
 export const query = graphql`
   query($slug: String!) {
     entry: contentfulPageEntry(slug: { eq: $slug }) {
-      id
       title
       contentBlocks {
-        impactText
-        info {
-          info
+        ... on ContentfulSingleParagraph {
+          body {
+            json
+          }
         }
-        labels
-        location
-        primaryLabel
-        sys {
-          contentType {
-            sys {
-              contentful_id
-            }
+        ... on ContentfulLabeledParagraph {
+          copy {
+            json
+          }
+          labels
+        }
+        ... on ContentfulImage {
+          caption
+          imageVariant
+        }
+        ... on ContentfulHero {
+          location
+          primaryLabel
+          labels
+          impactText
+          info {
+            info
           }
         }
       }
