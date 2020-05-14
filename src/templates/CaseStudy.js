@@ -15,24 +15,21 @@ export class CaseStudy extends Component {
   }
 
   render() {
-    console.log(this.state.dataFetch);
     return (
       <Layout>
         <Head title={this.state.data.title} />
         {this.state.dataFetch.map((edge, index) => {
           if (edge.__typename === 'ContentfulHero') {
+            this.props = {
+              impactText: edge.impactText,
+              labels: edge.labels,
+              primaryLabel: edge.primaryLabel,
+            };
             if (index === 0) {
-              this.props = {
-                impactText: edge.impactText,
-                labels: edge.labels,
-                primaryLabel: edge.primaryLabel,
-                location: edge.location,
-              };
+              return <Hero {...this.props} />;
+            } else {
+              return <Hero {...this.props} indent={true} />;
             }
-            console.log(edge.impactText);
-            console.log(edge.primaryLabel);
-            console.log(edge.location);
-            return <Hero {...this.props} />;
           } else if (edge.__typename === 'ContentfulImage') {
             console.log(edge.caption);
           }
@@ -63,7 +60,6 @@ export const query = graphql`
           imageVariant
         }
         ... on ContentfulHero {
-          location
           primaryLabel
           labels
           impactText

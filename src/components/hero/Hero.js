@@ -6,18 +6,6 @@ import cx from 'classnames';
 import styles from './hero.module.scss';
 
 export class Hero extends Component {
-  constructor(props) {
-    super();
-    this.state = {
-      index: () => {
-        props.location = 'Index' ? true : false;
-      },
-      hero: () => {
-        props.location = 'Entry' ? true : false;
-      },
-    };
-  }
-
   render() {
     let img;
     if (this.props.image) {
@@ -29,15 +17,14 @@ export class Hero extends Component {
     }
     return (
       <div
-        className={cx({
-          [styles.index]: this.state.index,
-          [styles.hero]: this.state.hero,
+        className={cx([styles.hero], {
+          [styles.border]: this.props.location,
         })}
       >
         {img}
         <div
           className={cx({
-            [styles.second]: this.props.isSecond,
+            [styles.indent]: this.props.indent,
           })}
         >
           <div>
@@ -50,7 +37,7 @@ export class Hero extends Component {
                 : false}
             </ul>
             <div className={styles.grid}>
-              {this.state.second ? (
+              {this.props.location ? (
                 <Link className={styles.entry}>{this.props.impactText}</Link>
               ) : (
                 <h1>{this.props.impactText}</h1>

@@ -43,29 +43,18 @@ export class IndexPage extends Component {
       >
         <Head />
         {this.state.dataFetch.map((edge, index) => {
+          this.props = {
+            impactText: edge.impactText,
+            labels: edge.labels,
+            primaryLabel: edge.primaryLabel,
+            info: edge.info.info,
+            image: edge.image != null ? edge.image.fluid : false,
+            location: edge.location,
+          };
           if (index === 0) {
-            return (
-              <Hero
-                impactText={edge.impactText}
-                labels={edge.labels}
-                primaryLabel={edge.primaryLabel}
-                location={edge.location}
-                info={edge.info.info}
-                image={edge.image != null ? edge.image.fluid : false}
-              />
-            );
+            return <Hero {...this.props} />;
           } else {
-            return (
-              <Hero
-                impactText={edge.impactText}
-                labels={edge.labels}
-                primaryLabel={edge.primaryLabel}
-                location={edge.location}
-                info={edge.info.info}
-                image={edge.image != null ? edge.image.fluid : false}
-                isSecond={true}
-              />
-            );
+            return <Hero {...this.props} indent={true} />;
           }
         })}
       </Layout>
