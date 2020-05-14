@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 import { get as _get } from 'lodash';
 
-import { Layout, SEO, Hero, Head } from 'components';
+import { Layout, SEO, Hero, Head, Imagery } from 'components';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 export class CaseStudy extends Component {
@@ -15,6 +15,7 @@ export class CaseStudy extends Component {
   }
 
   render() {
+    console.log(this.state.dataFetch);
     return (
       <Layout
         title={this.state.aux.title}
@@ -28,6 +29,7 @@ export class CaseStudy extends Component {
               impactText: edge.impactText,
               labels: edge.labels,
               primaryLabel: edge.primaryLabel,
+              info: edge.info != null ? edge.info.info : false,
             };
             if (index === 0) {
               return <Hero {...this.props} />;
@@ -35,7 +37,16 @@ export class CaseStudy extends Component {
               return <Hero {...this.props} indent={true} />;
             }
           } else if (edge.__typename === 'ContentfulImage') {
-            console.log(edge.caption);
+            this.props = {
+              image: edge.image.fluid,
+              caption: edge.caption,
+              size: edge.imageVariant,
+            };
+            if (index < 2) {
+              return <Imagery {...this.props} firstImage={true} />;
+            } else {
+              return <Imagery {...this.props} />;
+            }
           }
         })}
       </Layout>
@@ -63,6 +74,11 @@ export const query = graphql`
         ... on ContentfulImage {
           caption
           imageVariant
+          image {
+            fluid(quality: 100) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
         }
         ... on ContentfulHero {
           primaryLabel

@@ -5,13 +5,17 @@ import cx from 'classnames';
 import styles from './imagery.module.scss';
 
 export class Imagery extends Component {
+  constructor(props) {
+    super();
+    this.state = {
+      sizer: `styles.${props.size.toLowerCase()}`,
+    };
+  }
   render() {
     return (
       <React.Fragment>
         <Img
-          className={cx([`styles.${this.props.size.toLowerCase()}`], {
-            [styles.firstImage]: this.props.firstImage,
-          })}
+          // className={}
           fluid={this.props.image}
         />
         {this.props.caption ? (
@@ -25,3 +29,4 @@ export class Imagery extends Component {
 }
 
 export default Imagery;
+// [styles.firstImage]: this.props.firstImage,

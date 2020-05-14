@@ -43,9 +43,13 @@ export class Hero extends Component {
                 <h1>{this.props.impactText}</h1>
               )}
             </div>
-            <div className={styles.grid}>
-              <p>{this.props.info}</p>
-            </div>
+            {this.props.info ? (
+              <div className={styles.grid}>
+                <p>{this.props.info}</p>
+              </div>
+            ) : (
+              false
+            )}
           </div>
         </div>
       </div>
