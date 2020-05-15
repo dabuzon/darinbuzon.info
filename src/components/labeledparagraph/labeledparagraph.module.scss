@@ -1,17 +1,39 @@
-.pills {
-  display: inline-block;
-  padding: 8px 20px;
-  border: 1px solid;
-  border-radius: 100px;
-  margin: 0 4px;
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0 4px 0 0;
-  background-color: black;
-  color: white;
+.container {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+
+  div {
+    grid-column: 6/12;
+
+    div {
+    }
+  }
+
+  .pills,
+  .auxPills {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 100px;
+    margin-bottom: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid;
+  }
+
+  .pills {
+    background-color: black;
+    color: white;
+    margin-right: 4px;
+  }
+
+  .lists {
+    p {
+      padding: 10px 0 10px 0;
+    }
+  }
 }
 
-.lists {
-  p {
-    padding: 10px 0 10px 0;
-  }
+.auxPills {
+  color: black;
+  background-color: white;
+  margin: 0 4px 0 4px;
 }
