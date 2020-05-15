@@ -2,8 +2,17 @@ import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 import { get as _get } from 'lodash';
 
-import { Layout, SEO, Hero, Head, Imagery } from 'components';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import {
+  Layout,
+  SEO,
+  Hero,
+  Head,
+  Imagery,
+  Paragraph,
+  LabeledParagraph,
+  Colophon,
+} from 'components';
+import styles from './casestudy.module.scss';
 
 export class CaseStudy extends Component {
   constructor(props) {
@@ -23,32 +32,51 @@ export class CaseStudy extends Component {
         isIndex={false}
       >
         <Head title={this.state.aux.title} />
-        {this.state.dataFetch.map((edge, index) => {
-          if (edge.__typename === 'ContentfulHero') {
-            this.props = {
-              impactText: edge.impactText,
-              labels: edge.labels,
-              primaryLabel: edge.primaryLabel,
-              info: edge.info != null ? edge.info.info : false,
-            };
-            if (index === 0) {
-              return <Hero {...this.props} />;
-            } else {
-              return <Hero {...this.props} indent={true} />;
+        <div className={styles.container}>
+          {this.state.dataFetch.map((edge, index) => {
+            if (edge.__typename === 'ContentfulHero') {
+              this.props = {
+                impactText: edge.impactText,
+                labels: edge.labels,
+                primaryLabel: edge.primaryLabel,
+                info: edge.info != null ? edge.info.info : false,
+              };
+              if (index === 0) {
+                return (
+                  <div className={styles.top}>
+                    <Hero {...this.props} />
+                  </div>
+                );
+              } else {
+                return <Hero {...this.props} indent={true} />;
+              }
+            } else if (edge.__typename === 'ContentfulImage') {
+              this.props = {
+                image: edge.image.fluid,
+                caption: edge.caption,
+                size: edge.imageVariant,
+              };
+              if (index < 2) {
+                return <Imagery {...this.props} firstImage={true} />;
+              } else {
+                return <Imagery {...this.props} />;
+              }
+            } else if (edge.__typename === 'ContentfulSingleParagraph') {
+              return <Paragraph copy={edge.body.json} />;
+            } else if (edge.__typename === 'ContentfulLabeledParagraph') {
+              return (
+                <LabeledParagraph copy={edge.copy.json} labels={edge.labels} />
+              );
+            } else if (edge.__typename === 'ContentfulColophon') {
+              this.props = {
+                takeaways: edge.takeaways.json,
+                colophon: edge.colophon.json,
+                link: edge.linkToProject != null ? edge.linkToProject : false,
+              };
+              return <Colophon {...this.props} />;
             }
-          } else if (edge.__typename === 'ContentfulImage') {
-            this.props = {
-              image: edge.image.fluid,
-              caption: edge.caption,
-              size: edge.imageVariant,
-            };
-            if (index < 2) {
-              return <Imagery {...this.props} firstImage={true} />;
-            } else {
-              return <Imagery {...this.props} />;
-            }
-          }
-        })}
+          })}
+        </div>
       </Layout>
     );
   }
@@ -86,6 +114,15 @@ export const query = graphql`
           impactText
           info {
             info
+          }
+        }
+        ... on ContentfulColophon {
+          linkToProject
+          colophon {
+            json
+          }
+          takeaways {
+            json
           }
         }
       }

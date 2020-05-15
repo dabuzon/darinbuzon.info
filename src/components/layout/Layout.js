@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useStaticQuery } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import cx from 'classnames';
 
 import GlobalStyle from '../GlobalStyle';
 import styles from './layout.module.scss';
@@ -52,7 +53,11 @@ const Layout = (props) => {
           ) : (
             false
           )}
-          <div className={styles.footDirect}>
+          <div
+            className={cx([styles.footDirect], {
+              [styles.entry]: !props.isIndex,
+            })}
+          >
             <Link className={styles.footlink}>
               {props.homePage ? '' : 'Return'}
             </Link>

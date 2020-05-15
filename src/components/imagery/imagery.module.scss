@@ -1,13 +1,28 @@
-.fit {
+.container {
+  margin: 120px 0 120px 0;
+
+  .capContainer {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-gap: 40px;
+    p.caption {
+      grid-column: 3/6;
+      font-size: 16px;
+      color: #999;
+    }
+  }
 }
 
-.full {
-}
+.imgContain {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-gap: 40px;
 
-.firstImage {
-}
+  .fit {
+    grid-column: 3/-3;
+  }
 
-p.caption {
-  font-size: 16px;
-  color: #999;
+  div {
+    grid-column: 1/-1;
+  }
 }
