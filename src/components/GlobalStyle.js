@@ -20,14 +20,14 @@ a {
 }
 
 p {
-  font-size: 24px;
-  line-height: 29px;
+  font-size: 0.95vw;
+  line-height: 1.15vw;
 }
 
 h1 {
   font-weight: normal;
-  font-size: 112px;
-  line-height: 112px;
+  font-size: 4.5vw;
+  line-height: 4.5vw;
 }
 `;
 

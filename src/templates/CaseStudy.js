@@ -54,7 +54,7 @@ export class CaseStudy extends Component {
               this.props = {
                 image: edge.image.fluid,
                 caption: edge.caption,
-                size: edge.imageVariant,
+                size: edge.size,
               };
               if (index < 2) {
                 return <Imagery {...this.props} firstImage={true} />;
@@ -101,7 +101,7 @@ export const query = graphql`
         }
         ... on ContentfulImage {
           caption
-          imageVariant
+          size
           image {
             fluid(quality: 100) {
               ...GatsbyContentfulFluid_withWebp

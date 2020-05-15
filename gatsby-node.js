@@ -1,5 +1,5 @@
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
   const result = await graphql(`
     query {
       allContentfulPageEntry {
@@ -9,6 +9,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       }
     }
   `);
+
+  createRedirect({
+    fromPath: `/home`,
+    toPath: `/`,
+    redirectInBrowser: true,
+    isPermanent: true,
+  });
 
   if (result.errors) {
     reporter.panicOnBuild('Error loading page');

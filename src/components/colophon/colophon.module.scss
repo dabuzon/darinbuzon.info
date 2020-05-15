@@ -1,6 +1,7 @@
 .container {
   display: grid;
   grid-template-columns: repeat(16, 1fr);
+  padding: 100px 0 100px 0;
 
   .takeaway {
     grid-column: 3/7;

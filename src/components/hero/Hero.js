@@ -10,7 +10,7 @@ export class Hero extends Component {
     let img;
     if (this.props.image) {
       img = (
-        <Link className={styles.image}>
+        <Link className={styles.image} to={`/${this.props.caselink}`}>
           <Img className={styles.actualImage} fluid={this.props.image} />
         </Link>
       );
@@ -32,13 +32,33 @@ export class Hero extends Component {
               <div className={styles.pills}>{this.props.primaryLabel}</div>
               {this.props.labels
                 ? this.props.labels.map((label) => {
-                    return <Link className={styles.pills}>{label}</Link>;
+                    let link;
+                    if (label === 'Email') {
+                      link = 'mailto:hello@darinbuzon.info';
+                    } else if (label === 'Resume') {
+                      link = 'sanctuary.computer';
+                    } else if (label === 'Twitter') {
+                      link = 'https://twitter.com/_dabuzon';
+                    } else if (label === 'Instagram') {
+                      link = 'https://www.instagram.com/dabuzon/';
+                    }
+                    if (this.props.indent) {
+                      return <div className={styles.pills}>{label}</div>;
+                    } else {
+                      return (
+                        <a className={styles.pills} href={link} target="_blank">
+                          {label}
+                        </a>
+                      );
+                    }
                   })
                 : false}
             </ul>
             <div className={styles.grid}>
-              {this.props.location ? (
-                <Link className={styles.entry}>{this.props.impactText}</Link>
+              {this.props.indent ? (
+                <Link className={styles.entry} to={`/${this.props.caselink}`}>
+                  {this.props.impactText}
+                </Link>
               ) : (
                 <h1>{this.props.impactText}</h1>
               )}

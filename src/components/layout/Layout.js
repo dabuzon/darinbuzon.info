@@ -38,13 +38,17 @@ const Layout = (props) => {
   }
 
   return (
-    // Footer and header need their links appropriately modified
     <React.Fragment>
       <GlobalStyle />
       <div className={styles.container}>
         <header>
-          <Link className={styles.footlink}>{props.title}</Link>
-          <Link className={styles.footlink}>{props.pathReturn}</Link>
+          <p className={styles.footlink}>{props.title}</p>
+          <Link
+            className={styles.footlink}
+            to={`/${props.pathReturn.toLowerCase()}`}
+          >
+            {props.pathReturn}
+          </Link>
         </header>
         {props.children}
         <footer>
@@ -53,20 +57,16 @@ const Layout = (props) => {
           ) : (
             false
           )}
-          <div
-            className={cx([styles.footDirect], {
-              [styles.entry]: !props.isIndex,
-            })}
-          >
-            <Link className={styles.footlink}>
-              {props.homePage ? '' : 'Return'}
-            </Link>
-            {props.pageType ? (
-              <Link className={styles.footlink}>Scroll to top</Link>
-            ) : (
+          {!props.isIndex ? (
+            <div className={styles.entry}>
+              <Link className={styles.footlink} to="/">
+                Return
+              </Link>
               <Link className={styles.footlink}>Next</Link>
-            )}
-          </div>
+            </div>
+          ) : (
+            false
+          )}
         </footer>
       </div>
     </React.Fragment>
