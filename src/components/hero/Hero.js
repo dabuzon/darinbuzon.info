@@ -22,14 +22,14 @@ export class Hero extends Component {
         })}
       >
         {img}
-        <div
-          className={cx({
-            [styles.indent]: this.props.indent,
-          })}
-        >
-          <div>
+        <div className="gridContainer">
+          <div
+            className={cx({
+              indent: this.props.indent,
+            })}
+          >
             <ul>
-              <div className={styles.pills}>{this.props.primaryLabel}</div>
+              <div className="pills">{this.props.primaryLabel}</div>
               {this.props.labels
                 ? this.props.labels.map((label) => {
                     let link;
@@ -43,10 +43,10 @@ export class Hero extends Component {
                       link = 'https://www.instagram.com/dabuzon/';
                     }
                     if (this.props.indent) {
-                      return <div className={styles.pills}>{label}</div>;
+                      return <div className="pills">{label}</div>;
                     } else {
                       return (
-                        <a className={styles.pills} href={link} target="_blank">
+                        <a className="pills" href={link} target="_blank">
                           {label}
                         </a>
                       );
@@ -54,9 +54,9 @@ export class Hero extends Component {
                   })
                 : false}
             </ul>
-            <div className={styles.grid}>
+            <div className="gridContainer">
               {this.props.indent ? (
-                <Link className={styles.entry} to={`/${this.props.caselink}`}>
+                <Link className="entry" to={`/${this.props.caselink}`}>
                   {this.props.impactText}
                 </Link>
               ) : (
@@ -64,7 +64,7 @@ export class Hero extends Component {
               )}
             </div>
             {this.props.info ? (
-              <div className={styles.grid}>
+              <div className="gridContainer">
                 <p>{this.props.info}</p>
               </div>
             ) : (

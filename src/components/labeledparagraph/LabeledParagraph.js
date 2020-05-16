@@ -5,14 +5,14 @@ import styles from './labeledparagraph.module.scss';
 
 const LabeledParagraph = (props) => {
   return (
-    <div className={styles.container}>
-      <div>
-        <div>
+    <div className="gridContainer">
+      <div className="labeledpara">
+        <div class="theContent">
           {props.labels.map((labels, index) => {
             if (index > 0) {
-              return <div className={styles.auxPills}>{labels}</div>;
+              return <div className="pills">{labels}</div>;
             } else {
-              return <div className={styles.pills}>{labels}</div>;
+              return <div className="pills">{labels}</div>;
             }
           })}
         </div>

@@ -26,8 +26,8 @@ export class Imagery extends Component {
           />
         </div>
         {this.props.caption ? (
-          <div className={styles.capContainer}>
-            <p className={styles.caption}>{this.props.caption}</p>
+          <div className="gridContainer">
+            <p className="caption">{this.props.caption}</p>
           </div>
         ) : (
           false

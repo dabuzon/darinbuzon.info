@@ -28,7 +28,7 @@ const Layout = (props) => {
     footTop = data.footer.nodes.map((edge) => {
       return (
         <div>
-          <div className={styles.pills}>{edge.title}</div>
+          <div className="pills">{edge.title}</div>
           <div className={styles.lists}>
             {documentToReactComponents(edge.copy.json)}
           </div>
@@ -43,10 +43,7 @@ const Layout = (props) => {
       <div className={styles.container}>
         <header>
           <p className={styles.footlink}>{props.title}</p>
-          <Link
-            className={styles.footlink}
-            to={`/${props.pathReturn.toLowerCase()}`}
-          >
+          <Link className="footlink" to={`/${props.pathReturn.toLowerCase()}`}>
             {props.pathReturn}
           </Link>
         </header>
@@ -59,10 +56,10 @@ const Layout = (props) => {
           )}
           {!props.isIndex ? (
             <div className={styles.entry}>
-              <Link className={styles.footlink} to="/">
+              <Link className="footlink" to="/">
                 Return
               </Link>
-              <Link className={styles.footlink}>Next</Link>
+              <Link className="footlink">Next &#8594;</Link>
             </div>
           ) : (
             false
