@@ -32,7 +32,7 @@ h1, .entry {
 }
 
 a.entry {
-  grid-column: 1/11;
+  grid-column: 1/10;
 }
 
 .gridContainer {

@@ -52,9 +52,13 @@ const Layout = (props) => {
       <div className={styles.container}>
         <header>
           <p className={styles.footlink}>{props.title}</p>
-          <Link className="footlink" to={`/${props.pathReturn.toLowerCase()}`}>
+          {/* 
+               WE WILL REACTIVATE THIS ONCE WE GET TIME TO CODE OUT THE WRITING INDEX
+               FOR NOW IT IS ONLY A NICE-TO-HAVE
+            */
+          /* <Link className="footlink" to={`/${props.pathReturn.toLowerCase()}`}>
             {props.pathReturn}
-          </Link>
+          </Link> */}
         </header>
         {props.children}
         <footer>

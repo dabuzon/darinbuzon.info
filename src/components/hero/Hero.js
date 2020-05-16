@@ -54,7 +54,7 @@ export class Hero extends Component {
                   })
                 : false}
             </ul>
-            <div className="gridContainer">
+            <div className={styles.heroGrid}>
               {this.props.indent ? (
                 <Link className="entry" to={`/${this.props.caselink}`}>
                   {this.props.impactText}
