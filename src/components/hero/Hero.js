@@ -18,7 +18,7 @@ export class Hero extends Component {
     return (
       <div
         className={cx([styles.hero], {
-          [styles.border]: this.props.location,
+          [styles.border]: this.props.page,
         })}
       >
         {img}

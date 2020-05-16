@@ -20,8 +20,17 @@ const Layout = (props) => {
           }
         }
       }
+      caseStudy: allContentfulPageCaseStudy {
+        nodes {
+          slug
+        }
+      }
     }
   `);
+
+  let pathCheck = data.caseStudy.nodes.filter(
+    (urlPath) => urlPath.slug !== props.location.pathname.substr(1)
+  );
 
   let footTop;
   if (props.isIndex) {
@@ -59,7 +68,12 @@ const Layout = (props) => {
               <Link className="footlink" to="/">
                 Return
               </Link>
-              <Link className="footlink">Next &#8594;</Link>
+              <Link
+                className="footlink"
+                to={`/${pathCheck.map((result) => result.slug)}`}
+              >
+                Next case study &#8594;
+              </Link>
             </div>
           ) : (
             false

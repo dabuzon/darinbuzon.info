@@ -4,7 +4,6 @@ import { get as _get } from 'lodash';
 
 import {
   Layout,
-  SEO,
   Hero,
   Head,
   Imagery,
@@ -24,12 +23,12 @@ export class CaseStudy extends Component {
   }
 
   render() {
-    console.log(this.state.dataFetch);
     return (
       <Layout
         title={this.state.aux.title}
         pathReturn={this.state.aux.pathReturn}
         isIndex={false}
+        location={this.props.location}
       >
         <Head title={this.state.aux.title} />
         <div className={styles.container}>
@@ -84,7 +83,7 @@ export class CaseStudy extends Component {
 
 export const query = graphql`
   query($slug: String!) {
-    entry: contentfulPageEntry(slug: { eq: $slug }) {
+    entry: contentfulPageCaseStudy(slug: { eq: $slug }) {
       title
       pathReturn
       contentBlocks {

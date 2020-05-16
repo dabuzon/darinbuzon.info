@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { get as _get } from 'lodash';
 
-import { Layout, SEO, Hero, Head } from 'components';
+import { Layout, Hero, Head } from 'components';
 
 export class IndexPage extends Component {
   constructor(props) {
@@ -20,6 +20,7 @@ export class IndexPage extends Component {
         pathReturn={this.state.aux.pathReturn}
         isIndex={true}
         homePage={true}
+        location={this.props.location}
       >
         <Head />
         {this.state.dataFetch.map((edge, index) => {
@@ -29,7 +30,7 @@ export class IndexPage extends Component {
             primaryLabel: edge.primaryLabel,
             info: edge.info.info,
             image: edge.image != null ? edge.image.fluid : false,
-            location: edge.location,
+            page: edge.page,
             caselink: edge.primaryLabel.toLowerCase(),
           };
           if (index === 0) {
@@ -59,7 +60,7 @@ export const query = graphql`
           info
         }
         labels
-        location
+        page
         primaryLabel
       }
     }

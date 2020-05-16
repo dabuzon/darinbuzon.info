@@ -2,7 +2,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage, createRedirect } = actions;
   const result = await graphql(`
     query {
-      allContentfulPageEntry {
+      allContentfulPageCaseStudy {
         nodes {
           slug
         }
@@ -22,7 +22,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   console.log(result);
-  result.data.allContentfulPageEntry.nodes.forEach((page) => {
+  result.data.allContentfulPageCaseStudy.nodes.forEach((page) => {
     createPage({
       component: require.resolve('./src/templates/CaseStudy.js'),
       path: `/${page.slug}`,
