@@ -111,7 +111,6 @@ a.entry {
     .gridContainer {
       .labeledpara {
         grid-column: 6/12;
-
       }
     }
   }

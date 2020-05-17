@@ -4,7 +4,7 @@ This is the repository for my landing page. Includes resources, source code, and
 
 ## Source code details
 
-Built using [React](https://github.com/facebook/react/), [Styled Components](https://www.styled-components.com/), and [Styled System](https://styled-system.com/).
+Built using [Gatsby](https://www.gatsbyjs.org/) & [React](https://reactjs.org/), deployed through [Vercel](https://vercel.com/), and typeset in Times New Roman & Arial.
 
 ## License
 
