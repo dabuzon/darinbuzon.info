@@ -2,6 +2,7 @@
 .border {
   display: flex;
   flex-direction: column;
+  padding-bottom: 120px;
   margin: 0 0 30px 0;
 
   ul {
@@ -14,7 +15,6 @@
 
   p {
     grid-column: 2/7;
-    padding-bottom: 120px;
   }
 }
 
@@ -34,5 +34,40 @@
   .actualImage {
     grid-column: 2/-2;
     object-fit: contain;
+  }
+}
+
+@media (max-width: 1440px) {
+  .hero,
+  .border {
+    h1 {
+      grid-column: 1/11;
+    }
+
+    p {
+      grid-column: 2/8;
+    }
+  }
+
+  .gridColumn.p {
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero,
+  .border {
+    p {
+      grid-column: 2/10;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .border {
+    .heroGrid {
+      display: flex;
+    }
   }
 }

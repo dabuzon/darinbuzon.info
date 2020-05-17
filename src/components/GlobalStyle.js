@@ -77,6 +77,57 @@ a.entry {
     background-color: black;
     color: white;
   }
+
+  @media (max-width: 1440px) {
+    .gridContainer .caption {
+      font-size: 12px;
+    }
+
+    p, a.footlink {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    h1, .entry {
+      font-size: 72px;
+      line-height: 78px;
+    }
+
+    a.entry {
+      grid-column: 1/11;
+    }
+
+    .pills {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+  .pills {
+    font-size: 10px;
+    padding: 6px 16px;
+    }
+
+    .gridContainer {
+      .labeledpara {
+        grid-column: 6/12;
+
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    .gridContainer {
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1, .entry {
+      font-size: 50px;
+      line-height: 56px;
+      padding: 30px 0 40px 0;
+    }
+  }
 `;
 
 export default Style;

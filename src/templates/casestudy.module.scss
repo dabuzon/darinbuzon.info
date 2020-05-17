@@ -9,3 +9,8 @@
 .bottom {
   margin-bottom: 0;
 }
+
+@media (max-width: 900px) {
+  .container > * {
+  }
+}

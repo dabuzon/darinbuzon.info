@@ -32,6 +32,7 @@ export class IndexPage extends Component {
             image: edge.image != null ? edge.image.fluid : false,
             page: edge.page,
             caselink: edge.primaryLabel.toLowerCase(),
+            isIndex: true,
           };
           if (index === 0) {
             return <Hero {...this.props} />;

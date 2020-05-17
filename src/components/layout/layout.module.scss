@@ -42,3 +42,35 @@
     padding: 10px 0 10px 0;
   }
 }
+
+@media (max-width: 1440px) {
+  .container {
+    header {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    .footTopContainer {
+      :first-child {
+        grid-column: 3/8;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    .footTopContainer {
+      display: flex;
+      flex-direction: column;
+      padding: 0 0 30px 0;
+    }
+  }
+
+  .footTopContainer > * {
+    margin: 0 0 70px 0;
+  }
+}

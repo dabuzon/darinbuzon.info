@@ -3,3 +3,9 @@
     padding: 10px 0 10px 0;
   }
 }
+
+@media (max-width: 1024px) {
+  p {
+    grid-column: 3/10;
+  }
+}
