@@ -42,7 +42,7 @@ export class Hero extends Component {
                     } else if (label === 'Instagram') {
                       link = 'https://www.instagram.com/dabuzon/';
                     }
-                    if (this.props.indent) {
+                    if (this.props.indent || !this.props.isIndex) {
                       return <div className="pills">{label}</div>;
                     } else {
                       return (

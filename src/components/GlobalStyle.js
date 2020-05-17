@@ -120,6 +120,12 @@ a.entry {
     .gridContainer {
       display: flex;
       flex-direction: column;
+
+      .labeledpara {
+        .theContent {
+         margin-bottom: 15px;
+  }
+  }
     }
 
     h1, .entry {

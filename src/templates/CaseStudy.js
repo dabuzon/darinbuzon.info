@@ -31,7 +31,7 @@ export class CaseStudy extends Component {
         location={this.props.location}
       >
         <Head title={this.state.aux.title} />
-        <div className={styles.container}>
+        <div className={styles.case}>
           {this.state.dataFetch.map((edge, index) => {
             if (edge.__typename === 'ContentfulHero') {
               this.props = {
