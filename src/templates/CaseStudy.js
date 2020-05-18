@@ -29,6 +29,7 @@ export class CaseStudy extends Component {
         pathReturn={this.state.aux.pathReturn}
         isIndex={false}
         location={this.props.location}
+        caseStudy={true}
       >
         <Head title={this.state.aux.title} />
         <div className={styles.case}>

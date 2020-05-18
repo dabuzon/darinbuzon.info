@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useStaticQuery } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import cx from 'classnames';
 
@@ -28,9 +28,9 @@ const Layout = (props) => {
     }
   `);
 
-  let pathCheck = data.caseStudy.nodes.filter(
-    (urlPath) => urlPath.slug !== props.location.pathname.substr(1)
-  );
+  // let pathCheck = data.caseStudy.nodes.filter(
+  //   (urlPath) => urlPath.slug !== props.location.pathname.substr(1)
+  // );
 
   let footTop;
   if (props.isIndex) {
@@ -74,7 +74,16 @@ const Layout = (props) => {
               </Link>
               <Link
                 className="footlink"
-                to={`/${pathCheck.map((result) => result.slug)}`}
+                to={
+                  props.caseStudy
+                    ? `/${data.caseStudy.nodes
+                        .filter(
+                          (urlPath) =>
+                            urlPath.slug !== props.location.pathname.substr(1)
+                        )
+                        .map((result) => result.slug)}`
+                    : false
+                }
               >
                 Next case study &#8594;
               </Link>

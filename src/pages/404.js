@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 
-import { Layout, Hero, Head } from 'components';
+import { Layout, Head } from 'components';
 
 export class NotFound extends Component {
   render() {
