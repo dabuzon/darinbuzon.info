@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import cx from 'classnames';
 
 import GlobalStyle from '../GlobalStyle';
 import styles from './layout.module.scss';

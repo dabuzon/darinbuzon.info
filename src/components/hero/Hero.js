@@ -37,16 +37,17 @@ export class Hero extends Component {
                       link = 'mailto:hello@darinbuzon.info';
                     } else if (label === 'Resume') {
                       link = 'sanctuary.computer';
-                    } else if (label === 'Twitter') {
-                      link = 'https://twitter.com/_dabuzon';
-                    } else if (label === 'Instagram') {
-                      link = 'https://www.instagram.com/dabuzon/';
                     }
                     if (this.props.indent || !this.props.isIndex) {
                       return <div className="pills">{label}</div>;
                     } else {
                       return (
-                        <a className="pills" href={link} target="_blank">
+                        <a
+                          className="pills"
+                          href={link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           {label}
                         </a>
                       );

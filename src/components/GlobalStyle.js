@@ -128,8 +128,8 @@ a.entry {
     }
 
     h1, .entry {
-      font-size: 50px;
-      line-height: 56px;
+      font-size: 40px;
+      line-height: 44px;
       padding: 30px 0 40px 0;
     }
   }

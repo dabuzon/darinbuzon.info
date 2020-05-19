@@ -13,7 +13,12 @@ const Colophon = (props) => {
       <div className={styles.colophon}>
         <div className="pills">Colophon</div>
         {props.link ? (
-          <a className={styles.link} href={props.link} target="_blank">
+          <a
+            className={styles.link}
+            href={props.link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Link to project
           </a>
         ) : (
