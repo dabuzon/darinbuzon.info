@@ -27,10 +27,6 @@ const Layout = (props) => {
     }
   `);
 
-  // let pathCheck = data.caseStudy.nodes.filter(
-  //   (urlPath) => urlPath.slug !== props.location.pathname.substr(1)
-  // );
-
   let footTop;
   if (props.isIndex) {
     footTop = data.footer.nodes.map((edge) => {
@@ -71,21 +67,25 @@ const Layout = (props) => {
               <Link className="footlink" to="/">
                 Return
               </Link>
-              <Link
-                className="footlink"
-                to={
-                  props.caseStudy
-                    ? `/${data.caseStudy.nodes
-                        .filter(
-                          (urlPath) =>
-                            urlPath.slug !== props.location.pathname.substr(1)
-                        )
-                        .map((result) => result.slug)}`
-                    : false
-                }
-              >
-                Next case study &#8594;
-              </Link>
+              {!props.isFour ? (
+                <Link
+                  className="footlink"
+                  to={
+                    props.caseStudy
+                      ? `/${data.caseStudy.nodes
+                          .filter(
+                            (urlPath) =>
+                              urlPath.slug !== props.location.pathname.substr(1)
+                          )
+                          .map((result) => result.slug)}`
+                      : false
+                  }
+                >
+                  Next case study &#8594;
+                </Link>
+              ) : (
+                false
+              )}
             </div>
           ) : (
             false

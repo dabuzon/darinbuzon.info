@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 
-import { Layout, Head } from 'components';
+import { Layout, Head, Hero } from 'components';
 
 export class NotFound extends Component {
   render() {
     return (
-      <Layout>
+      <Layout isFour={true}>
         <Head />
-        <h1>Page not found</h1>
-        <Link to="/">Head home</Link>
+        <h1>This page is intentionally left blank.</h1>
       </Layout>
     );
   }
