@@ -78,4 +78,14 @@
       display: flex;
     }
   }
+
+  .image {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    .actualImage {
+      grid-column: 1/-1;
+      object-fit: contain;
+    }
+  }
 }

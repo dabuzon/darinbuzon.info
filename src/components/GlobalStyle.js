@@ -125,6 +125,14 @@ a.entry {
          margin-bottom: 15px;
   }
   }
+
+  .mobileParagraph:first-child {
+        padding-bottom: 20px;
+      }
+
+      .mobileParagraph {
+        padding-bottom: 0
+      }
     }
 
     h1, .entry {

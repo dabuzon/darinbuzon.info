@@ -35,10 +35,10 @@ export class Hero extends Component {
               {this.props.labels
                 ? this.props.labels.map((label) => {
                     let link;
-                    if (label === 'Email') {
-                      link = 'mailto:hello@darinbuzon.info';
-                    } else if (label === 'Resume') {
-                      link = 'sanctuary.computer';
+                    if (label === 'Twitter') {
+                      link = 'https://twitter.com/_dabuzon';
+                    } else if (label === 'Instagram') {
+                      link = 'https://www.instagram.com/dabuzon/';
                     }
                     if (this.props.indent || !this.props.isIndex) {
                       return <div className="pills">{label}</div>;
