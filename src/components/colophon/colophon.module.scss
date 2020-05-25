@@ -3,16 +3,20 @@
   grid-template-columns: repeat(16, 1fr);
   padding: 100px 0 100px 0;
 
-  .takeaway {
+  .outcomes {
     grid-column: 3/7;
 
     p {
-      margin-top: 30px;
+      margin-top: 40px;
     }
   }
 
   .colophon {
     grid-column: 10/16;
+
+    div {
+      margin-bottom: 35px;
+    }
 
     p {
       margin: 5px 0 5px 0;
@@ -36,9 +40,9 @@
     padding: 6px 16px;
   }
 
-  .takeaway {
+  .outcomes {
     p {
-      margin-top: 30px;
+      margin-top: 40px;
     }
   }
 }
@@ -49,7 +53,7 @@
     flex-direction: column;
     padding: 0 0 70px 0;
 
-    .takeaway {
+    .outcomes {
       padding-right: 70px;
     }
   }

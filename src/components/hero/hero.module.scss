@@ -1,5 +1,6 @@
 .hero,
-.border {
+.border,
+.firstHero {
   display: flex;
   flex-direction: column;
   padding-bottom: 120px;
@@ -18,6 +19,10 @@
   }
 }
 
+.firstHero {
+  padding-bottom: 0;
+}
+
 .heroGrid {
   display: grid;
   grid-template-columns: repeat(15, 1fr);
@@ -29,6 +34,9 @@
 }
 
 .image {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-gap: 40px;
   margin: 0 0 40px 0;
 
   .actualImage {

@@ -6,9 +6,9 @@ import styles from './colophon.module.scss';
 const Colophon = (props) => {
   return (
     <div className={styles.container}>
-      <div className={styles.takeaway}>
-        <div className="pills">Takeaways</div>
-        {documentToReactComponents(props.takeaways)}
+      <div className={styles.outcomes}>
+        <div className="pills">Outcomes</div>
+        {documentToReactComponents(props.outcomes)}
       </div>
       <div className={styles.colophon}>
         <div className="pills">Colophon</div>

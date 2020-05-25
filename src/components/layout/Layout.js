@@ -41,6 +41,10 @@ const Layout = (props) => {
     });
   }
 
+  let sluglink = data.caseStudy.nodes
+    .filter((urlPath) => urlPath.slug !== props.location.pathname.substr(1))
+    .map((result) => result.slug);
+
   return (
     <React.Fragment>
       <GlobalStyle />
@@ -72,12 +76,9 @@ const Layout = (props) => {
                   className="footlink"
                   to={
                     props.caseStudy
-                      ? `/${data.caseStudy.nodes
-                          .filter(
-                            (urlPath) =>
-                              urlPath.slug !== props.location.pathname.substr(1)
-                          )
-                          .map((result) => result.slug)}`
+                      ? `/${
+                          sluglink[Math.floor(Math.random() * sluglink.length)]
+                        }`
                       : false
                   }
                 >

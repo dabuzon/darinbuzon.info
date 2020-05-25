@@ -28,7 +28,7 @@ export class IndexPage extends Component {
             impactText: edge.impactText,
             labels: edge.labels,
             primaryLabel: edge.primaryLabel,
-            info: edge.info.info,
+            copy: edge.copy.json,
             image: edge.image != null ? edge.image.fluid : false,
             page: edge.page,
             caselink: edge.primaryLabel.toLowerCase(),
@@ -49,20 +49,21 @@ export const query = graphql`
   query {
     home: contentfulPageIndex(title: { eq: "Home" }) {
       title
-      pathReturn
       contentBlocks {
-        image {
-          fluid(quality: 100) {
-            ...GatsbyContentfulFluid_withWebp
+        ... on ContentfulHero {
+          impactText
+          copy {
+            json
           }
+          image {
+            fluid(maxWidth: 2560, quality: 100) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
+          labels
+          page
+          primaryLabel
         }
-        impactText
-        info {
-          info
-        }
-        labels
-        page
-        primaryLabel
       }
     }
   }

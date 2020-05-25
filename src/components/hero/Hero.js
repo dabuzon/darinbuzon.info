@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import cx from 'classnames';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import styles from './hero.module.scss';
 
@@ -19,6 +20,7 @@ export class Hero extends Component {
       <div
         className={cx([styles.hero], {
           [styles.border]: this.props.page,
+          [styles.firstHero]: this.props.firstHero,
         })}
       >
         {img}
@@ -64,9 +66,9 @@ export class Hero extends Component {
                 <h1>{this.props.impactText}</h1>
               )}
             </div>
-            {this.props.info ? (
+            {this.props.copy ? (
               <div className="gridContainer">
-                <p>{this.props.info}</p>
+                {documentToReactComponents(this.props.copy)}
               </div>
             ) : (
               false

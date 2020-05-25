@@ -39,12 +39,12 @@ export class CaseStudy extends Component {
                 impactText: edge.impactText,
                 labels: edge.labels,
                 primaryLabel: edge.primaryLabel,
-                info: edge.info != null ? edge.info.info : false,
+                copy: edge.copy != null ? edge.copy.json : false,
               };
               if (index === 0) {
                 return (
                   <div className={styles.top}>
-                    <Hero {...this.props} />
+                    <Hero {...this.props} firstHero={true} />
                   </div>
                 );
               } else {
@@ -69,7 +69,7 @@ export class CaseStudy extends Component {
               );
             } else if (edge.__typename === 'ContentfulColophon') {
               this.props = {
-                takeaways: edge.takeaways.json,
+                outcomes: edge.outcomes.json,
                 colophon: edge.colophon.json,
                 link: edge.linkToProject != null ? edge.linkToProject : false,
               };
@@ -103,7 +103,7 @@ export const query = graphql`
           caption
           size
           image {
-            fluid(quality: 100) {
+            fluid(maxWidth: 2560, quality: 100) {
               ...GatsbyContentfulFluid_withWebp
             }
           }
@@ -112,8 +112,8 @@ export const query = graphql`
           primaryLabel
           labels
           impactText
-          info {
-            info
+          copy {
+            json
           }
         }
         ... on ContentfulColophon {
@@ -121,7 +121,7 @@ export const query = graphql`
           colophon {
             json
           }
-          takeaways {
+          outcomes {
             json
           }
         }
