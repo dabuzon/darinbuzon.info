@@ -55,7 +55,9 @@ module.exports = {
         name: 'Darin Buzon',
         start_url: '/',
         background_color: '#ffffff',
+        icon: 'static/favicon.png',
       },
     },
+    'gatsby-plugin-offline',
   ],
 };

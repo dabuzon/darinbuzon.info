@@ -35,7 +35,9 @@ export class Hero extends Component {
               {this.props.labels
                 ? this.props.labels.map((label) => {
                     let link;
-                    if (label === 'Twitter') {
+                    if (label === 'Resume') {
+                      link = '/';
+                    } else if (label === 'Twitter') {
                       link = 'https://twitter.com/_dabuzon';
                     } else if (label === 'Instagram') {
                       link = 'https://www.instagram.com/dabuzon/';
