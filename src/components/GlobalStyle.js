@@ -131,7 +131,7 @@ a.entry {
       }
 
       .mobileParagraph {
-        padding-bottom: 0
+        padding-bottom: 0;
       }
     }
 

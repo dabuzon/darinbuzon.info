@@ -88,4 +88,12 @@
       object-fit: contain;
     }
   }
+
+  p:first-child {
+    padding-bottom: 20px;
+  }
+
+  p {
+    padding-bottom: 0;
+  }
 }
