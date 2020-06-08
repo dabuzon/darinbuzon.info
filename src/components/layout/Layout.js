@@ -69,7 +69,7 @@ const Layout = (props) => {
           {!props.isIndex ? (
             <div className={styles.entry}>
               <Link className="footlink" to="/">
-                Return
+                &#8592; Back to mainpage
               </Link>
               {!props.isFour ? (
                 <Link

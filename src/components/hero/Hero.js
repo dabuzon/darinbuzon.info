@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'gatsby';
+import { Link, withPrefix } from 'gatsby';
 import Img from 'gatsby-image';
 import cx from 'classnames';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
@@ -36,7 +36,7 @@ export class Hero extends Component {
                 ? this.props.labels.map((label) => {
                     let link;
                     if (label === 'Resume') {
-                      link = '/';
+                      link = withPrefix('/DarinBuzon_CV.pdf');
                     } else if (label === 'Twitter') {
                       link = 'https://twitter.com/_dabuzon';
                     } else if (label === 'Instagram') {
