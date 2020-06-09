@@ -5,6 +5,14 @@ const Style = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
 }
+
+::selection {
+  background: rgba(254, 80, 0, 0.15);
+}
+::-moz-selection {
+  background: rgba(254, 80, 0, 0.15);
+}
+
 html, body { 
   margin: 0;
   height: 100%;
