@@ -2,7 +2,10 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
-const config = require('gatsby-plugin-config');
+const contentfulConfig = {
+  spaceId: process.env.CONTENTFUL_SPACE_ID,
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+};
 
 module.exports = {
   siteMetadata: {
@@ -11,6 +14,12 @@ module.exports = {
     description: 'Darin Buzon&#39;s homebase for cyberspace.',
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID || 'none',
+      },
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-transformer-sharp',
@@ -36,11 +45,7 @@ module.exports = {
     },
     {
       resolve: 'gatsby-source-contentful',
-      options: {
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-        downloadLocal: true,
-      },
+      options: contentfulConfig,
     },
     {
       resolve: 'gatsby-source-filesystem',
