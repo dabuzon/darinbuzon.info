@@ -21,6 +21,7 @@ export class Hero extends Component {
         className={cx([styles.hero], {
           [styles.border]: this.props.page,
           [styles.firstHero]: this.props.firstHero,
+          [styles.caseHero]: this.props.caseHero,
         })}
       >
         {img}

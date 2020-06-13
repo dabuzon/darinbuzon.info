@@ -79,6 +79,10 @@
     }
   }
 
+  .caseHero {
+    padding-bottom: 30px;
+  }
+
   .image {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -87,10 +91,6 @@
       grid-column: 1/-1;
       object-fit: contain;
     }
-  }
-
-  p:first-child {
-    padding-bottom: 20px;
   }
 
   p {

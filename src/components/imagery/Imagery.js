@@ -12,12 +12,16 @@ export class Imagery extends Component {
     };
   }
   render() {
-    console.log(this.props.firstImage);
     // Image style assignment works fine currently
     // Could run into issues since it is only returning
     // the expected `full` selector as undefined
     return (
-      <div className={cx({ [styles.firstImage]: this.props.firstImage })}>
+      <div
+        className={cx({
+          firstImage: this.props.firstImage,
+          anImage: !this.props.firstImage,
+        })}
+      >
         <div className={styles.imgContain}>
           <Img className={this.state.sizer} fluid={this.props.image} />
         </div>

@@ -48,7 +48,7 @@ export class CaseStudy extends Component {
                   </div>
                 );
               } else {
-                return <Hero {...this.props} indent={true} />;
+                return <Hero {...this.props} indent={true} caseHero={true} />;
               }
             } else if (edge.__typename === 'ContentfulImage') {
               this.props = {
