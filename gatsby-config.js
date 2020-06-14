@@ -1,12 +1,3 @@
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-});
-
-const contentfulConfig = {
-  spaceId: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-};
-
 module.exports = {
   siteMetadata: {
     title: 'Darin Buzon',
@@ -14,16 +5,8 @@ module.exports = {
     description: 'Darin Buzon&#39;s homebase for cyberspace.',
   },
   plugins: [
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID || 'none',
-      },
-    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-plugin-module-resolver',
@@ -44,10 +27,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-contentful',
-      options: contentfulConfig,
-    },
-    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'src',
@@ -59,7 +38,7 @@ module.exports = {
       options: {
         name: 'Darin Buzon',
         start_url: '/',
-        background_color: '#ffffff',
+        background_color: '#000000',
         icon: 'static/favicon.png',
       },
     },
