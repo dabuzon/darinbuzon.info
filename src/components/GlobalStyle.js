@@ -19,6 +19,7 @@ body {
 	margin: 0;
 	height: 100%;
 	font-family: Arial, Helvetica, sans-serif;
+	letter-spacing: 0.7px;
 	background: black;
 }
 
