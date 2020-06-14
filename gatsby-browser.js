@@ -1,7 +1,12 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+import React, { useState, useEffect } from "react"
+import { checkSession } from "./src/utils/auth"
 
-// You can delete this file if you're not using it
+const SessionCheck = ({ children }) => {
+  const [loading, stillLoading] = useState(true);
+  useEffect(() => checkSession(() => stillLoading(false)));
+  return loading === false && <>{children}</>
+};
+
+export const wrapRootElement = ({ element }) => (
+  <SessionCheck>{element}</SessionCheck>
+);
