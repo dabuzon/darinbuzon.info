@@ -1,4 +1,4 @@
-exports.createPages = async ({ graphql, actions, reporter }) => {
+exports.createPages = async ({ graphql, actions, reporter, page }) => {
   const { createPage, createRedirect } = actions;
   const result = await graphql(`
     query {
@@ -21,14 +21,23 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.panicOnBuild('Error loading page');
   }
 
-  console.log(result);
-  result.data.allContentfulPageCaseStudy.nodes.forEach((page) => {
+  result.data.allContentfulPageCaseStudy.nodes.forEach((pages) => {
     createPage({
       component: require.resolve('./src/templates/CaseStudy.js'),
-      path: `/${page.slug}`,
+      path: `/${pages.slug}`,
       context: {
-        slug: page.slug,
+        slug: pages.slug,
       },
     });
   });
+};
+
+exports.onCreatePage = async ({ page, actions }) => {
+  const { createPage } = actions;
+
+  if (page.path.match(/^\/case-studies/)) {
+    page.matchPath = '/case-studies/*';
+
+    createPage(page);
+  }
 };
