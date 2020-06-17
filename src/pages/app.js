@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import PrivateRoute from '../components/privateroute';
 import Layout from '../components/layout';
 import Login from '../components/Login';
+import CaseStudy from '../templates/CaseStudy';
 
 const App = () => {
   const data = useStaticQuery(graphql`
@@ -21,9 +22,11 @@ const App = () => {
     <Layout>
       <Router>
         {data.cases.nodes.map((edge) => {
-          return <PrivateRoute path={`/${edge}`} />;
+          return <PrivateRoute path={`/${edge}`} component={CaseStudy} />;
         })}
-        <Login path="/app/login" />
+        {/* might need to use a prop for Login
+        to send to the other components, Form and Login */}
+        <Login path="/case-studies/lock" />
       </Router>
     </Layout>
   );

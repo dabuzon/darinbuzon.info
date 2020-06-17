@@ -1,19 +1,18 @@
+// Checks if we are in the browser
 export const isBrowser = () => typeof window !== 'undefined';
 
-export const getUser = () =>
-  isBrowser() && window.localStorage.getItem('gatsbyUser')
-    ? JSON.parse(window.localStorage.getItem('gatsbyUser'))
+export const getPass = () =>
+  isBrowser() && window.localStorage.getItem('gatsbyPass')
+    ? JSON.parse(window.localStorage.getItem('gatsbyPass'))
     : {};
 
-const setUser = (user) =>
-  window.localStorage.setItem('gatsbyUser', JSON.stringify(user));
+const setPass = (pass) =>
+  window.localStorage.setItem('gatsbyPass', JSON.stringify(pass));
 
-export const handleLogin = ({ username, password }) => {
-  if (username === `john` && password === `pass`) {
-    return setUser({
-      username: `john`,
-      name: `Johnny`,
-      email: `johnny@example.org`,
+export const handleLogin = ({ password }) => {
+  if (password === `darinisbuzon`) {
+    return setPass({
+      password: `darinisbuzon`,
     });
   }
 
@@ -21,12 +20,7 @@ export const handleLogin = ({ username, password }) => {
 };
 
 export const isLoggedIn = () => {
-  const user = getUser();
+  const pass = getPass();
 
-  return !!user.username;
-};
-
-export const logout = (callback) => {
-  setUser({});
-  callback();
+  return !!pass.password;
 };
