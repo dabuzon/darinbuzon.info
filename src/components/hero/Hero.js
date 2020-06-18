@@ -11,7 +11,10 @@ export class Hero extends Component {
     let img;
     if (this.props.image) {
       img = (
-        <Link className={styles.image} to={`/${this.props.caselink}`}>
+        <Link
+          className={styles.image}
+          to={`/case-studies/${this.props.caselink}`}
+        >
           <Img className={styles.actualImage} fluid={this.props.image} />
         </Link>
       );
@@ -62,7 +65,10 @@ export class Hero extends Component {
             </ul>
             <div className={styles.heroGrid}>
               {this.props.indent && this.props.isIndex ? (
-                <Link className="entry" to={`/${this.props.caselink}`}>
+                <Link
+                  className="entry"
+                  to={`/case-studies/${this.props.caselink}`}
+                >
                   {this.props.impactText}
                 </Link>
               ) : (

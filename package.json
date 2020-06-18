@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.4.0",
+    "@mkitio/gatsby-theme-password-protect": "^2.1.2",
     "babel-plugin-styled-components": "^1.10.7",
     "classnames": "^2.2.6",
     "dayjs": "^1.8.27",

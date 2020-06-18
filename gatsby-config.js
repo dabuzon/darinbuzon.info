@@ -15,6 +15,13 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: '@mkitio/gatsby-theme-password-protect',
+      options: {
+        password: 'darinisdabuzon',
+        pagePaths: ['/case-studies/cocoon'],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID || 'none',
