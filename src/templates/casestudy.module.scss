@@ -1,0 +1,25 @@
+.case > * {
+  margin: 7vw 0 7vw 0;
+}
+
+.top {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .case > * {
+    margin: 120px 0 120px 0;
+  }
+
+  div:nth-child(2) {
+    margin-top: 0;
+  }
+
+  .hero {
+    padding-bottom: 0;
+  }
+
+  .top {
+    margin: 0;
+  }
+}
