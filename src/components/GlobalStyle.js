@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 
 const Style = createGlobalStyle`
+
+
 * {
 	box-sizing: border-box;
 	margin: 0;
