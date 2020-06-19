@@ -5,6 +5,20 @@ module.exports = {
     description: 'Darin Buzon&#39;s homebase for cyberspace.',
   },
   plugins: [
+    {
+      resolve: '@mkitio/gatsby-theme-password-protect',
+      options: {
+        password: 'darinisdabuzon',
+        partialMatching: true,
+        pagePaths: ['/case-studies/'],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID || 'none',
+      },
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-styled-components',
