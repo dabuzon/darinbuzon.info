@@ -2,9 +2,10 @@ import Cookies from 'js-cookie';
 import queryString from 'query-string';
 
 const COOKIE_NAME = 'gatsby-theme-password-protect';
+const expireTime = new Date(new Date().getTime() + 60 * 60 * 1000);
 
 export const setSessionPassword = (passwordCandidate) => {
-  Cookies.set(COOKIE_NAME, passwordCandidate);
+  Cookies.set(COOKIE_NAME, passwordCandidate, { expires: expireTime });
 };
 
 export const getSessionPassword = () => {

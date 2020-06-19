@@ -18,7 +18,8 @@ module.exports = {
       resolve: '@mkitio/gatsby-theme-password-protect',
       options: {
         password: 'darinisdabuzon',
-        pagePaths: ['/case-studies/cocoon'],
+        partialMatching: true,
+        pagePaths: ['/case-studies/'],
       },
     },
     {
