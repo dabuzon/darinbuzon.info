@@ -17,7 +17,7 @@ module.exports = {
     {
       resolve: '@mkitio/gatsby-theme-password-protect',
       options: {
-        password: 'darinisdabuzon',
+        password: process.env.PASS_PROTECT,
         partialMatching: true,
         pagePaths: ['/case-studies/'],
       },
