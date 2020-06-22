@@ -4,7 +4,7 @@ This is the repository for my landing page. Includes resources, source code, and
 
 ## Source code details
 
-Built using [Gatsby](https://www.gatsbyjs.org/) & [React](https://reactjs.org/), deployed through [Vercel](https://vercel.com/), and typeset in Times New Roman & Arial.
+Built using [Gatsby](https://www.gatsbyjs.org/) & [React](https://reactjs.org/), deployed through [Netlify](https://www.netlify.com/), and typeset in Times New Roman & Arial.
 
 ## License
 
