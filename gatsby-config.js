@@ -27,7 +27,6 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-styled-components',
-    'gatsby-plugin-preload-fonts',
     {
       resolve: 'gatsby-plugin-module-resolver',
       options: {
@@ -67,13 +66,5 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        typekit: {
-          id: 'jzk1loo',
-        },
-      },
-    },
   ],
 };
