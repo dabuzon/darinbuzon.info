@@ -27,8 +27,6 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-styled-components',
-    'gatsby-plugin-preload-fonts',
-    'gatsby-plugin-netlify-cache',
     {
       resolve: 'gatsby-plugin-module-resolver',
       options: {

@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 const Style = createGlobalStyle`
-@import url("https://use.typekit.net/jzk1loo.css");
 
 * {
 	box-sizing: border-box;
@@ -14,6 +13,15 @@ const Style = createGlobalStyle`
 
 ::-moz-selection {
 	background: rgba(254, 80, 0, 0.15);
+}
+
+html {
+  visibility: hidden;
+}
+
+html.wf-active,
+html.wf-inactive {
+  visibility: visible;
 }
 
 html,
