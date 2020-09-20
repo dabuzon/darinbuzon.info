@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 const Style = createGlobalStyle`
-
+@import url("https://use.typekit.net/jzk1loo.css");
 
 * {
 	box-sizing: border-box;
