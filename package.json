@@ -7,7 +7,6 @@
   "author": "Darin Buzon <hello@darinbuzon.info>",
   "license": "MIT",
   "scripts": {
-    "preload-fonts": "gatsby-preload-fonts",
     "build": "gatsby build",
     "start": "gatsby develop",
     "format": "prettier --write src/**/*.js",
