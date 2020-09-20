@@ -66,5 +66,13 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        typekit: {
+          id: 'jzk1loo',
+        },
+      },
+    },
   ],
 };

@@ -20,11 +20,14 @@ html,
 body {
 	margin: 0;
 	height: 100%;
-	font-family: 'Times New Roman', Times, serif;
+	font-family: adobe-garamond-pro, serif;
+	font-weight: 400;
+	font-style: normal;
+	color: #2b2b2b;
 }
 
 a {
-	color: black;
+	color: #2b2b2b;
 	text-decoration: none;
 	&:hover {
 		color: #fe5000;
@@ -77,14 +80,18 @@ a.entry {
 	display: inline-block;
 	padding: 8px 20px;
 	border: 1px solid;
+	border-color: #2b2b2b;
 	border-radius: 100px;
 	margin: 0 4px;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: neue-haas-grotesk-display, sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	letter-spacing: 1px;
 }
 
 .pills:first-child {
 	margin: 0 4px 0 0;
-	background-color: black;
+	background-color: #2b2b2b;
 	color: white;
 }
 
