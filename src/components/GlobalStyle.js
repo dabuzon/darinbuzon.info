@@ -31,6 +31,7 @@ body {
 	font-family: adobe-garamond-pro, serif;
 	font-weight: 400;
 	font-style: normal;
+	letter-spacing: 0;
 	color: #2b2b2b;
 }
 
@@ -45,13 +46,14 @@ a {
 p,
 a.footlink {
 	font-size: 1vw;
-	line-height: 1.2vw;
+	line-height: 1.55vw;
 }
 
 h1,
 .entry {
 	font-weight: normal;
 	font-size: 4.5vw;
+	letter-spacing: 1px;
 	line-height: 4.75vw;
 	padding: 30px 0 4vw 0;
 }
