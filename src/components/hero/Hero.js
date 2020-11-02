@@ -43,8 +43,8 @@ export class Hero extends Component {
                       link = withPrefix('/DarinBuzon_CV.pdf');
                     } else if (label === 'Twitter') {
                       link = 'https://twitter.com/_dabuzon';
-                    } else if (label === 'Instagram') {
-                      link = 'https://www.instagram.com/dabuzon/';
+                    } else if (label === 'LinkedIn') {
+                      link = 'https://www.linkedin.com/in/darin-buzon/';
                     }
                     if (this.props.indent || !this.props.isIndex) {
                       return <div className="pills">{label}</div>;
